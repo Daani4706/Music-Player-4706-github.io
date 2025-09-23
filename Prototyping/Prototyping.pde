@@ -25,38 +25,38 @@ rect(stopX, stopY, stopWidth, stopHeight);
 //
 float closeX = 0;
 float closeY = 0;
-float closeWidth = 0;
-float closeHeight = 0;
+float closeWidth = 2cm;
+float closeHeight = 2cm;
 //
 float lyricsX = 0;
 float lyricsY = 0;
-float lyricsWidth = 0;
-float lyricsHeight = 0;
+float lyricsWidth = 5.2cm;
+float lyricsHeight = 2cm;
 //
 float infoX = 0;
 float infoY = 0;
-float infoWidth = 0;
-float infoHeight = 0;
+float infoWidth = 8.3cm;
+float infoHeight = 2cm;
 //
 float artistNameX = 0;
 float artistNameY = 0;
-float artistNameWidth = 0;
-float artistNameHeight = 0;
+float artistNameWidth = 14.5cm;
+float artistNameHeight = 1cm;
 //
 float songNameX = 0;
 float songNameY = 0;
-float songNameWidth = 0;
-float songNameHeight = 0;
+float songNameWidth = 14.5cm;
+float songNameHeight = 1cm;
 //
 float trackTimeX = 0;
 float trackTimeY = 0;
-float trackTimeWidth = 0;
-float trackTimeHeight = 0;
+float trackTimeWidth = 14.5cm;
+float trackTimeHeight = 0.2cm;
 //
 float imageX = 0;
 float imageY = 0;
-float imageWidth = 0;
-float imageHeight = 0;
+float imageWidth = 8.3cm;
+float imageHeight = 8.3cm;
 //
 float progressBarX = 0;
 float progressBarY = 0;
@@ -65,60 +65,60 @@ float progressBarHeight = 0;
 //
 float totaltimeX = 0;
 float totaltimeY = 0;
-float totaltimeWidth = 0;
-float totaltimeHeight = 0;
+float totaltimeWidth = 1.5cm;
+float totaltimeHeight = 0.5cm;
 //
 float timeRemainingX = 0;
 float timeRemainingY = 0;
-float timeRemainingWidth = 0;
-float timeRemainingHeight = 0;
+float timeRemainingWidth = 1.5cm;
+float timeRemainingHeight = 0.5cm;
 //
 float playlistX = 0;
 float playlistY = 0;
-float playlistWidth = 0;
-float playlistHeight = 0;
+float playlistWidth = 3cm;
+float playlistHeight = 3cm;
 //
 float equalizerX = 0;
 float equalizerY = 0;
-float equalizerWidth = 0;
-float equalizerHeight = 0;
+float equalizerWidth = 3cm;
+float equalizerHeight = 3cm;
 //
 float downloadX = 0;
 float downloadY = 0;
-float downloadWidth = 0;
-float downloadHeight = 0;
+float downloadWidth = 3cm;
+float downloadHeight = 3cm;
 //
 float shareX = 0;
 float shareY = 0;
-float shareWidth = 0;
-float shareHeight = 0;
+float shareWidth = 3cm;
+float shareHeight = 3cm;
 //
 float powerX = 0;
 float powerY = 0;
-float powerWidth = 0;
-float powerHeight = 0;
+float powerWidth = 4.5cm;
+float powerHeight = 0.2cm;
 //
 float shuffleX = 0;
 float shuffleY = 0;
-float shuffleWidth = 0;
-float shuffleHeight = 0;
+float shuffleWidth = 3cm;
+float shuffleHeight = 3cm;
 //
 float playSongX = 0;
 float playSongY = 0;
-float playSongWidth = 0;
-float playSongHeight = 0;
+float playSongWidth = 3cm;
+float playSongHeight = 3cm;
 //
 float skipNextX = 0;
 float skipNextY = 0;
-float skipNextWidth = 0;
-float skipNextHeight = 0;
+float skipNextWidth = 3cm;
+float skipNextHeight = 3cm;
 //
 float rewindX = 0;
 float rewindY = 0;
-float rewindWidth = 0;
-float rewindHeight = 0;
+float rewindWidth = 3cm;
+float rewindHeight = 3cm;
 //
 float stopX = 0;
 float stopY = 0;
-float stopWidth = 0;
-float stopHeight = 0;
+float stopWidth = 3cm;
+float stopHeight = 3cm;
