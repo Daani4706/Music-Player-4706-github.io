@@ -37,7 +37,7 @@ float imageY = appHeight * 3.2/17.0;
 float imageWidth = appWidth * 8.3/28.0;
 float imageHeight = appHeight * 8.3/17.0;
 //
-float totaltimeX = appWidth * 23/28.0;
+float totaltimeX = appWidth * 22.9/28.0;
 float totaltimeY = appHeight * 6.8/17.0;
 float totaltimeWidth = appWidth * 1.5/28.0;
 float totaltimeHeight = appHeight * 0.5/17.0;
@@ -52,17 +52,17 @@ float playlistY = appHeight * 8/17.0;
 float playlistWidth = appWidth * 3/28.0;
 float playlistHeight = appHeight * 3/17.0;
 //
-float equalizerX = appWidth * 13.9/28.0;
+float equalizerX = appWidth * 14.2/28.0;
 float equalizerY = appHeight * 8/17.0;
 float equalizerWidth = appWidth * 3/28.0;
 float equalizerHeight = appHeight * 3/17.0;
 //
-float downloadX = appWidth * 18/28.0;
+float downloadX = appWidth * 18.4/28.0;
 float downloadY = appHeight * 8/17.0;
 float downloadWidth = appWidth * 3/28.0;
 float downloadHeight = appHeight * 3/17.0;
 //
-float shareX = appWidth * 21.7/28.0;
+float shareX = appWidth * 22.5/28.0;
 float shareY = appHeight * 8/17.0;
 float shareWidth = appWidth * 3/28.0;
 float shareHeight = appHeight * 3/17.0;
@@ -102,6 +102,7 @@ float stopY = appHeight * 13/17.0;
 float stopWidth = appWidth * 3/28.0;
 float stopHeight = appHeight * 3/17.0;
 //
+println(closeX, closeY, closeWidth, closeHeight);
 rect(closeX, closeY, closeWidth, closeHeight);
 rect(lyricsX, lyricsY, lyricsWidth, lyricsHeight);
 rect(infoX, infoY, infoWidth, infoHeight);
@@ -112,15 +113,13 @@ rect(imageX, imageY, imageWidth, imageHeight);
 rect(totaltimeX, totaltimeY, totaltimeWidth, totaltimeHeight);
 rect(timeRemainingX, timeRemainingY, timeRemainingWidth, timeRemainingHeight);
 rect(playlistX, playlistY, playlistWidth, playlistHeight);
-//rect(equalizerX, equalizerY, equalizerWidth, equalizerHeight);
-//rect(downloadX, downloadY, downloadWidth, downloadHeight);
-//rect(shareX, shareY, shareWidth, shareHeight);
-//rect(powerX, powerY, powerWidth, powerHeight);
-//rect(shuffleX, shuffleY, shuffleWidth, shuffleHeight);
-//rect(pauseX, pauseY, pauseWidth, pauseHeight);
-//rect(playSongX, playSongY, playSongWidth, playSongHeight);
-//rect(skipNextX, skipNextY, skipNextWidth, skipNextHeight);
-//rect(rewindX, rewindY, rewindWidth, rewindHeight);
-//rect(stopX, stopY, stopWidth, stopHeight);
-
-println(closeX, closeY, closeWidth, closeHeight);
+rect(equalizerX, equalizerY, equalizerWidth, equalizerHeight);
+rect(downloadX, downloadY, downloadWidth, downloadHeight);
+rect(shareX, shareY, shareWidth, shareHeight);
+rect(powerX, powerY, powerWidth, powerHeight);
+rect(shuffleX, shuffleY, shuffleWidth, shuffleHeight);
+rect(pauseX, pauseY, pauseWidth, pauseHeight);
+rect(playSongX, playSongY, playSongWidth, playSongHeight);
+rect(skipNextX, skipNextY, skipNextWidth, skipNextHeight);
+rect(rewindX, rewindY, rewindWidth, rewindHeight);
+rect(stopX, stopY, stopWidth, stopHeight);
