@@ -37,12 +37,12 @@ float imageY = appHeight * 3.2/17.0;
 float imageWidth = appWidth * 8.3/28.0;
 float imageHeight = appHeight * 8.3/17.0;
 //
-float totaltimeX = appWidth * 22.7/28.0;
+float totaltimeX = appWidth * 23/28.0;
 float totaltimeY = appHeight * 6.8/17.0;
 float totaltimeWidth = appWidth * 1.5/28.0;
 float totaltimeHeight = appHeight * 0.5/17.0;
 //
-float timeRemainingX = appWidth * 16.0/28.0;
+float timeRemainingX = appWidth * 9.9/28.0;
 float timeRemainingY = appHeight * 6.8/17.0;
 float timeRemainingWidth = appWidth * 1.5/28.0;
 float timeRemainingHeight = appHeight * 0.5/17.0;
@@ -104,14 +104,14 @@ float stopHeight = appHeight * 3/17.0;
 //
 rect(closeX, closeY, closeWidth, closeHeight);
 rect(lyricsX, lyricsY, lyricsWidth, lyricsHeight);
-//rect(infoX, infoY, infoWidth, infoHeight);
-//rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
-//rect(songNameX, songNameY, songNameWidth, songNameHeight);
-//rect(trackTimeX, trackTimeY, trackTimeWidth, trackTimeHeight);
-//rect(imageX, imageY, imageWidth, imageHeight);
-//rect(totaltimeX, totaltimeY, totaltimeWidth, totaltimeHeight);
-//rect(timeRemainingX, timeRemainingY, timeRemainingWidth, timeRemainingHeight);
-//rect(playlistX, playlistY, playlistWidth, playlistHeight);
+rect(infoX, infoY, infoWidth, infoHeight);
+rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
+rect(songNameX, songNameY, songNameWidth, songNameHeight);
+rect(trackTimeX, trackTimeY, trackTimeWidth, trackTimeHeight);
+rect(imageX, imageY, imageWidth, imageHeight);
+rect(totaltimeX, totaltimeY, totaltimeWidth, totaltimeHeight);
+rect(timeRemainingX, timeRemainingY, timeRemainingWidth, timeRemainingHeight);
+rect(playlistX, playlistY, playlistWidth, playlistHeight);
 //rect(equalizerX, equalizerY, equalizerWidth, equalizerHeight);
 //rect(downloadX, downloadY, downloadWidth, downloadHeight);
 //rect(shareX, shareY, shareWidth, shareHeight);
