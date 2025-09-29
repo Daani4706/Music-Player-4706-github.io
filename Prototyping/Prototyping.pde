@@ -87,6 +87,13 @@ float playSongY = appHeight * 13/17.0;
 float playSongWidth = appWidth * 3/28.0;
 float playSongHeight = appHeight * 3/17.0;
 //
+float playSongX1 = appWidth * 11.3 + 3/28 * 1/4;
+float playSongY1 = appHeight* 11.3 + 3/17.0 * 1/4;
+float playSongX2 = appWidth * 11.3 + 3/28 * 1/4;
+float playSongY2 = appHeight * 11.3 + 3/17.0 * 3/4 ;
+float playSongX3 = appWidth * 11.3 + 3/28 * 3/4;
+float playSongY3 = appHeight * 11.3 + 3/17.0 * 1/2;
+//
 float skipNextX = appWidth * 7.7/28.0;
 float skipNextY = appHeight * 13/17.0;
 float skipNextWidth = appWidth * 3/28.0;
@@ -119,8 +126,8 @@ rect(shareX, shareY, shareWidth, shareHeight);
 rect(powerX, powerY, powerWidth, powerHeight);
 rect(shuffleX, shuffleY, shuffleWidth, shuffleHeight);
 rect(pauseX, pauseY, pauseWidth, pauseHeight);
-//rect(playSongX, playSongY, playSongWidth, playSongHeight);
-//triangle(playSongX1, playSongY1, playSongX2, playSongX3, playSongY3);
+rect(playSongX, playSongY, playSongWidth, playSongHeight);
+triangle(playSongX1, playSongY1, playSongX2, playSongX3, playSongY3);
 rect(skipNextX, skipNextY, skipNextWidth, skipNextHeight);
 rect(rewindX, rewindY, rewindWidth, rewindHeight);
 rect(stopX, stopY, stopWidth, stopHeight);
