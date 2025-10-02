@@ -1,12 +1,70 @@
-//rect(imageX, imageY, imageWidth, imageHeight);
-//square(nameX, nameY, nameDimension);
-//line(nameX1, nameY1, nameX2, nameY2);
-//triangle(nameX1, nameY1, nameX2, nameY2, nameX3, nameY3);
+fullScreen(); //displayWidth //displayHeight
+int appWidth = displayWidth;
+int appHeight = displayHeight;
 //
+float playlistX = appWidth * 9.9/28.0;
+float playlistY = appHeight * 8/17.0;
+float playlistWidth = appWidth * 3/28.0;
+float playlistHeight = appHeight * 3/17.0;
+//
+float equalizerX = appWidth * 14.2/28.0;
+float equalizerY = appHeight * 8/17.0;
+float equalizerWidth = appWidth * 3/28.0;
+float equalizerHeight = appHeight * 3/17.0;
+//
+float downloadX = appWidth * 18.4/28.0;
+float downloadY = appHeight * 8/17.0;
+float downloadWidth = appWidth * 3/28.0;
+float downloadHeight = appHeight * 3/17.0;
+//
+float shareX = appWidth * 22.5/28.0;
+float shareY = appHeight * 8/17.0;
+float shareWidth = appWidth * 3/28.0;
+float shareHeight = appHeight * 3/17.0;
+//
+float shuffleX = appWidth * 18.5/28.0;
+float shuffleY = appHeight * 13/17.0;
+float shuffleWidth = appWidth * 3/28.0;
+float shuffleHeight = appHeight * 3/17.0;
+//
+float pauseX = appWidth * 14.9/28.0;
+float pauseY = appHeight * 13/17.0;
+float pauseWidth = appWidth * 3/28.0;
+float pauseHeight = appHeight * 3/17.0;
+//
+float playSongX = appWidth * 11.3/28.0;
+float playSongY = appHeight * 13/17.0;
+float playSongWidth = appWidth * 3/28.0;
+float playSongHeight = appHeight * 3/17.0;
+float playSongX1 = playSongX + playSongWidth * 1/4;
+float playSongY1 = playSongY + playSongHeight * 1/4;
+float playSongX2 = playSongX + playSongWidth * 3/4;
+float playSongY2 = playSongY + playSongHeight * 1/2;
+float playSongX3 = playSongX + playSongWidth * 1/4;
+float playSongY3 = playSongY + playSongHeight * 3/4;
+//
+float skipNextX = appWidth * 7.7/28.0;
+float skipNextY = appHeight * 13/17.0;
+float skipNextWidth = appWidth * 3/28.0;
+float skipNextHeight = appHeight * 3/17.0;
+//
+float rewindX = appWidth * 4.1/28.0;
+float rewindY = appHeight * 13/17.0;
+float rewindWidth = appWidth * 3/28.0;
+float rewindHeight = appHeight * 3/17.0;
+//
+float stopX = appWidth * 0.5/28.0;
+float stopY = appHeight * 13/17.0;
+float stopWidth = appWidth * 3/28.0;
+float stopHeight = appHeight * 3/17.0;
+//
+//rect(playlistX, playlistY, playlistWidth, playlistHeight);
+//rect(equalizerX, equalizerY, equalizerWidth, equalizerHeight);
+//rect(downloadX, downloadY, downloadWidth, downloadHeight);
+//rect(shuffleX, shuffleY, shuffleWidth, shuffleHeight);
+//rect(pauseX, pauseY, pauseWidth, pauseHeight);
+rect(playSongX, playSongY, playSongWidth, playSongHeight);
 triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
-float playSongX1 = imageX + appwidth * ;
-float playSongY1 = imageY + appHeight * ;
-float playSongX2 = image + appwidth * ;
-float playSongY2 = + appHeight * ;
-float playSongX3 = + appwidth * ;
-float playSongY3 = + appHeight * ;
+//rect(skipNextX, skipNextY, skipNextWidth, skipNextHeight);
+//rect(rewindX, rewindY, rewindWidth, rewindHeight);
+//rect(stopX, stopY, stopWidth, stopHeight);
