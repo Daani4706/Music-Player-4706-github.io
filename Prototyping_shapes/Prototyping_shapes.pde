@@ -230,6 +230,24 @@ float stopMBY = stopDIVY + stopDIVHeight * 1/4;
 float stopMBWidth = stopDIVWidth * 2/4;
 float stopMBHeight = stopDIVHeight * 2/4;
 //
+float closeX = appWidth * 24.7/28.0;
+float closeY = appHeight * 1/17.0;
+float closeWidth = appWidth * 2/28.0;
+float closeHeight = appHeight * 2/17.0;
+// line 1
+float closelineLine1X1 = closeX + closeWidth * 1/4; 
+float closelineLine1Y1 = closeY + closeHeight * 1/4;
+float closelineLine1X2 = closeX + closeWidth * 3/4; 
+float closelineLine1Y2 = closeY + closeHeight * 3/4;
+// line 2
+float closelineLine2X1 = closeX + closeWidth * 3/4; 
+float closelineLine2Y1 = closeY + closeHeight * 1/4;
+float closelineLine2X2 = closeX + closeWidth * 1/4; 
+float closelineLine2Y2 = closeY + closeHeight * 3/4;
+//
+rect(closeX, closeY, closeWidth, closeHeight);
+line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
+line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
 rect(playlistX, playlistY, playlistWidth, playlistHeight);
 line(playlistLine1X, playlistLine1Y1, playlistLine1X2, playlistLine1Y2);
 line(playlistLine2X, playlistLine2Y1, playlistLine2X2, playlistLine2Y2);
