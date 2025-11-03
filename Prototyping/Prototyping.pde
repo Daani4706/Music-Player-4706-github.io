@@ -51,17 +51,17 @@ float playlistX = appWidth * 9.9/28.0;
 float playlistY = appHeight * 8/17.0;
 float playlistWidth = appWidth * 3/28.0;
 float playlistHeight = appHeight * 3/17.0;
-//Line 1
+//Line points 1
 float playlistLine1X  = playlistX + playlistWidth * 3/8;
 float playlistLine1Y1 = playlistY + playlistHeight * 2/8;
 float playlistLine1X2 = playlistX + playlistWidth * 6/8;
 float playlistLine1Y2 = playlistY + playlistHeight * 2/8;
-//Line 2
+//Line points 2
 float playlistLine2X  = playlistX + playlistWidth * 3/8;
 float playlistLine2Y1 = playlistY + playlistHeight * 4/8;
 float playlistLine2X2 = playlistX + playlistWidth * 6/8;
 float playlistLine2Y2 = playlistY + playlistHeight * 4/8;
-//Line 3
+//Line points 3
 float playlistLine3X  = playlistX + playlistWidth * 3/8;
 float playlistLine3Y1 = playlistY + playlistHeight * 6/8;
 float playlistLine3X2 = playlistX + playlistWidth * 6/8;
@@ -77,27 +77,27 @@ float equalizerX = appWidth * 14.2/28.0;
 float equalizerY = appHeight * 8/17.0;
 float equalizerWidth = appWidth * 3/28.0;
 float equalizerHeight = appHeight * 3/17.0;
-// Line 1
+// Line points 1
 float equalizerLine1X1 = equalizerX + equalizerWidth * 2/8;
 float equalizerLine1Y1 = equalizerY + equalizerHeight * 5/8;
 float equalizerLine1X2 = equalizerX + equalizerWidth * 2/8;
 float equalizerLine1Y2 = equalizerY + equalizerHeight * 6/8;
-// Line 2
+// Line points 2
 float equalizerLine2X1 = equalizerX + equalizerWidth * 3/8;
 float equalizerLine2Y1 = equalizerY + equalizerHeight * 3/8;
 float equalizerLine2X2 = equalizerX + equalizerWidth * 3/8;
 float equalizerLine2Y2 = equalizerY + equalizerHeight * 6/8;
-// Line 3
+// Line points 3
 float equalizerLine3X1 = equalizerX + equalizerWidth * 4/8;
 float equalizerLine3Y1 = equalizerY + equalizerHeight * 4/8;
 float equalizerLine3X2 = equalizerX + equalizerWidth * 4/8;
 float equalizerLine3Y2 = equalizerY + equalizerHeight * 6/8;
-// Line 4
+// Line points 4
 float equalizerLine4X1 = equalizerX + equalizerWidth * 5/8;
 float equalizerLine4Y1 = equalizerY + equalizerHeight * 3/8;
 float equalizerLine4X2 = equalizerX + equalizerWidth * 5/8;
 float equalizerLine4Y2 = equalizerY + equalizerHeight * 6/8;
-// Line 5
+// Line points 5
 float equalizerLine5X1 = equalizerX + equalizerWidth * 6/8;
 float equalizerLine5Y1 = equalizerY + equalizerHeight * 5/8;
 float equalizerLine5X2 = equalizerX + equalizerWidth * 6/8;
@@ -107,22 +107,22 @@ float downloadX = appWidth * 18.4/28.0;
 float downloadY = appHeight * 8/17.0;
 float downloadWidth = appWidth * 3/28.0;
 float downloadHeight = appHeight * 3/17.0;
-//Line 1
+//Line 1 ponits
 float arrowLine1X1 = downloadX + downloadWidth * 3/8; 
 float arrowLine1Y1 = downloadY + downloadHeight * 2/8;
 float arrowLine1X2 = downloadX + downloadWidth * 5/8; 
 float arrowLine1Y2 = downloadY + downloadHeight * 2/8;
-//Line 2
+//Line 2 points
 float arrowLine2X1 = downloadX + downloadWidth * 3/8; 
 float arrowLine2Y1 = downloadY + downloadHeight * 2/8;
 float arrowLine2X2 = downloadX + downloadWidth * 3/8; 
 float arrowLine2Y2 = downloadY + downloadHeight * 4/8;
-//Line3
+//Line3 points
 float arrowLine3X1 = downloadX + downloadWidth * 5/8; 
 float arrowLine3Y1 = downloadY + downloadHeight * 2/8;
 float arrowLine3X2 = downloadX + downloadWidth * 5/8; 
 float arrowLine3Y2 = downloadY + downloadHeight * 4/8;
-//Triangle
+//Triangle points
 float downloadX1 = downloadX + downloadWidth * 2/8;
 float downloadY1 = downloadY + downloadHeight * 4/8;
 float downloadX2 = downloadX + downloadWidth * 6/8;
@@ -134,39 +134,39 @@ float shareX = appWidth * 22.5/28.0;
 float shareY = appHeight * 8/17.0;
 float shareWidth = appWidth * 3/28.0;
 float shareHeight = appHeight * 3/17.0;
-//Triangle
+//Triangle points
 float shareX1 = shareX + shareWidth * 4/8;
 float shareY1 = shareY + shareHeight * 2/8;
 float shareX2 = shareX + shareWidth * 3/8;
 float shareY2 = shareY + shareHeight * 3/8;
 float shareX3 = shareX + shareWidth * 5/8;
 float shareY3 = shareY + shareHeight * 3/8;
-//Line-D
+//Line points D
 float shareLineDX  = shareX + shareWidth * 4/8;
 float shareLineDY1 = shareY + shareHeight * 3/8;
 float shareLineDX2 = shareX + shareWidth * 4/8;
 float shareLineDY2 = shareY + shareHeight * 5/8;
-// Line 1
+// Line points 1
 float shareLine1X1 = shareX + shareWidth * 2/8; 
 float shareLine1Y1 = shareY + shareHeight * 4/8;
 float shareLine1X2 = shareX + shareWidth * 3/8; 
 float shareLine1Y2 = shareY + shareHeight * 4/8;
-// Line 2
+// Line points 2
 float shareLine2X1 = shareX + shareWidth * 2/8; 
 float shareLine2Y1 = shareY + shareHeight * 4/8;
 float shareLine2X2 = shareX + shareWidth * 2/8; 
 float shareLine2Y2 = shareY + shareHeight * 6/8;
-// Line 3
+// Line points 3
 float shareLine3X1 = shareX + shareWidth * 2/8; 
 float shareLine3Y1 = shareY + shareHeight * 6/8;
 float shareLine3X2 = shareX + shareWidth * 6/8; 
 float shareLine3Y2 = shareY + shareHeight * 6/8;
-// Line 4 
+// Line points 4 
 float shareLine4X1 = shareX + shareWidth * 6/8; 
 float shareLine4Y1 = shareY + shareHeight * 4/8;
 float shareLine4X2 = shareX + shareWidth * 6/8; 
 float shareLine4Y2 = shareY + shareHeight * 6/8;
-// Line 5 
+// Line points 5 
 float shareLine5X1 = shareX + shareWidth * 5/8; 
 float shareLine5Y1 = shareY + shareHeight * 4/8;
 float shareLine5X2 = shareX + shareWidth * 6/8; 
@@ -181,12 +181,12 @@ float shuffleX = appWidth * 18.5/28.0;
 float shuffleY = appHeight * 13/17.0;
 float shuffleWidth = appWidth * 3/28.0;
 float shuffleHeight = appHeight * 3/17.0;
-// Line 1
+// Line points1
 float shuffleLine1X1 = shuffleX + shuffleWidth * 3/8; 
 float shuffleLine1Y1 = shuffleY + shuffleHeight * 5/8;
 float shuffleLine1X2 = shuffleX + shuffleWidth * 5/8; 
 float shuffleLine1Y2 = shuffleY + shuffleHeight * 3/8;
-// Line 2
+// Line ponits 2
 float shuffleLine2X1 = shuffleX + shuffleWidth * 5/8; 
 float shuffleLine2Y1 = shuffleY + shuffleHeight * 5/8;
 float shuffleLine2X2 = shuffleX + shuffleWidth * 3/8; 
@@ -194,14 +194,14 @@ float shuffleLine2Y2 = shuffleY + shuffleHeight * 3/8;
 //
 float triWidth = shuffleWidth * 1/16;
 float triHeight = shuffleHeight * 1/12;
-// Triangle 1
+// Triangle points 1
 float shuffle1X1 = shuffleLine1X2;                   
 float shuffle1Y1 = shuffleLine1Y2 - triHeight / 2;    
 float shuffle1X2 = shuffle1X1 + triWidth;             
 float shuffle1Y2 = shuffleLine1Y2;                    
 float shuffle1X3 = shuffleLine1X2;                     
 float shuffle1Y3 = shuffleLine1Y2 + triHeight / 2;     
-// Triangle 2
+// Triangle points2
 float shuffle2X1 = shuffleLine2X1;                   
 float shuffle2Y1 = shuffleLine2Y1 - triHeight / 2;    
 float shuffle2X2 = shuffle2X1 + triWidth;             
@@ -213,12 +213,12 @@ float pauseX = appWidth * 14.9/28.0;
 float pauseY = appHeight * 13/17.0;
 float pauseWidth = appWidth * 3/28.0;
 float pauseHeight = appHeight * 3/17.0;
-// Line 1
+// Line ponits 1
 float pauseLine1X  = pauseX + pauseWidth * 1/4;
 float pauseLine1Y1 = pauseY + pauseHeight * 1/4;
 float pauseLine1X2 = pauseX + pauseWidth * 1/4;
 float pauseLine1Y2 = pauseY + pauseHeight * 3/4;
-// Line 2
+// Line points 2
 float pauseLine2X  = pauseX + pauseWidth * 3/4;
 float pauseLine2Y1 = pauseY + pauseHeight * 1/4;
 float pauseLine2X2 = pauseX + pauseWidth * 3/4;
@@ -228,7 +228,7 @@ float playSongX = appWidth * 11.3/28.0;
 float playSongY = appHeight * 13/17.0;
 float playSongWidth = appWidth * 3/28.0;
 float playSongHeight = appHeight * 3/17.0;
-// Triangle
+// Triangle ponits
 float playSongX1 = playSongX + playSongWidth * 1/4;
 float playSongY1 = playSongY + playSongHeight * 1/4;
 float playSongX2 = playSongX + playSongWidth * 3/4;
@@ -240,7 +240,7 @@ float skipNextX = appWidth * 7.7/28.0;
 float skipNextY = appHeight * 13/17.0;
 float skipNextWidth = appWidth * 3/28.0;
 float skipNextHeight = appHeight * 3/17.0;
-// Triangle
+// Triangle points
 float skipNextX1 = skipNextX + skipNextWidth * 1/4;
 float skipNextY1 = skipNextY + skipNextHeight * 1/4;
 float skipNextX2 = skipNextX + skipNextWidth * 3/4;
@@ -264,7 +264,7 @@ float rewindX2 = rewindX + rewindWidth * 3/4;
 float rewindY2 = rewindY + rewindHeight * 1/4;
 float rewindX3 = rewindX + rewindWidth * 3/4;
 float rewindY3 = rewindY + rewindHeight * 3/4;
-// Line 
+// Line points
 float rewindLineX1 = rewindX + rewindWidth * 1/4;
 float rewindLineY1 = rewindY + rewindHeight * 1/4;
 float rewindLineX2 = rewindX + rewindWidth * 1/4;
@@ -274,7 +274,7 @@ float stopDIVX = appWidth * 0.5/28.0;
 float stopDIVY = appHeight * 13/17.0;
 float stopDIVWidth = appWidth * 3/28.0;
 float stopDIVHeight = appHeight * 3/17.0;
-//square
+// Square points
 float stopMBX = stopDIVX + stopDIVWidth * 1/4;
 float stopMBY = stopDIVY + stopDIVHeight * 1/4;
 float stopMBWidth = stopDIVWidth * 2/4;
