@@ -301,6 +301,7 @@ rect(songNameX, songNameY, songNameWidth, songNameHeight);
 rect(trackTimeX, trackTimeY, trackTimeWidth, trackTimeHeight);
 rect(imageX, imageY, imageWidth, imageHeight);
 rect(totaltimeX, totaltimeY, totaltimeWidth, totaltimeHeight);
+rect(timeRemainingX, timeRemainingY, timeRemainingWidth, timeRemainingHeight);
 rect(playlistX, playlistY, playlistWidth, playlistHeight);
 line(playlistLine1X, playlistLine1Y1, playlistLine1X2, playlistLine1Y2);
 line(playlistLine2X, playlistLine2Y1, playlistLine2X2, playlistLine2Y2);
