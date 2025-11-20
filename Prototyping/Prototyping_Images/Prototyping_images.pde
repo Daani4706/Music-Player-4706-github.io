@@ -1,7 +1,10 @@
 /*Aspect Radio: Bike Only Demonstration
--Old Man
+-Cheery
 */
 //
 //Display
-fullScreen(); // landscape
-//size(500,700); // Portrait
+//fullScreen(); // landscape
+size(500,500); // Portrait
+int appWidth = displayWidth; //width
+int appHeight = displayHeight; // height
+println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreen, displayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
