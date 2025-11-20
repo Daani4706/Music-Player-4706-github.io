@@ -4,4 +4,4 @@
 //
 //Display
 fullScreen(); // landscape
-size(); // Portrait
+//size(500,700); // Portrait
