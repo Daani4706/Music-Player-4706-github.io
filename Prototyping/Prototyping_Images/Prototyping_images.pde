@@ -7,7 +7,7 @@ fullScreen(); // landscape
 //size(1280/960); // Portrait
 int appWidth = displayWidth; //width
 int appHeight = displayHeight; // height
-//println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreen, displayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
+println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreen, displayWidth:"+displayWidth, "displayHeight:"+displayHeight, "\n\t\t\t\t\t\t\t\t\tSize\t\t, width:"+width, "height:"+height);
 //
 //
 //Population
@@ -29,9 +29,17 @@ PImage image1 = loadImage( imagePathway1 );
 int imageWidth1 = 1280;//Hardcoded
 int imageHeight1 = 960;//Hardcoded
 //Aspect Ratio
-float image1AspectRadio_LessOne = ( imageWidth1 >= imageHeight1) ? imageWidth1/imageHeight1 : imageHeight1/imageWidth1; //Ternary Operator
-println (image1AspectRadio_LessOne); 
-//
+float image1AspectRadio_GreaterOne = ( imageWidth1 >= imageHeight1) ? float (imageWidth1)/float (imageHeight1) : float (imageHeight1)/float (imageWidth1); //Ternary Operator
+//Hardcoded Greater-Than-One Aspect Ratio
+//How to make image bigger or smaller
+//ERROR: truncating, casting
+println ("Aspect Ratio >1" image1AspectRadio_GreaterOne, "Testing for Decimals, formula", imageWidth1/imageHeight); 
+//Algorithm Decisions (choice)
+//Aspect Ratio
+if () {} else {} //End IF Aspect Ratio
+
+
+
 //DIV
 rect(imageX, imageY, imageWidth, imageHeight);
 //
