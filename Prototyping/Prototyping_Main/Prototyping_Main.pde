@@ -44,7 +44,7 @@ float trackTimeHeight = appHeight * 0.2/17.0;
 //
 float imageX = appWidth * 0.5/28.0;
 float imageY = appHeight * 3.2/17.0;
-float imageWidth = appWidth * 8.3/28.0;
+float imageWidth = appWidth * 9/28.0;
 float imageHeight = appHeight * 8.3/17.0;
 //
 float totaltimeX = appWidth * 22.9/28.0;
