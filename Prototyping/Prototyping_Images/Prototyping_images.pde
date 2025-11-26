@@ -1,4 +1,4 @@
-/*Aspect Radio: Bike Only Demonstration
+/*Aspect Radio: Butterfly Only Demonstration
 -Butterfly
 */
 //
@@ -29,14 +29,15 @@ PImage image1 = loadImage( imagePathway1 );
 int imageWidth1 = 1280;//Hardcoded
 int imageHeight1 = 960;//Hardcoded
 //Aspect Ratio
-float image1AspectRadio_GreaterOne = ( imageWidth1 >= imageHeight1) ? float (imageWidth1)/float (imageHeight1) : float (imageHeight1)/float (imageWidth1); //Ternary Operator
+float image1AspectRatio_GreaterOne = ( imageWidth1 >= imageHeight1) ? float (imageWidth1)/float (imageHeight1) : float (imageHeight1)/float (imageWidth1); //Ternary Operator
 //Hardcoded Greater-Than-One Aspect Ratio
 //How to make image bigger or smaller
 //ERROR: truncating, casting
-println ("Aspect Ratio >1" image1AspectRadio_GreaterOne, "Testing for Decimals, formula", imageWidth1/imageHeight); 
+println("Testing for Decimals, formula unsing ints:", imageWidth1/imageHeight1);
+println("After casting added, Aspect Ratio >1:", image1AspectRatio_GreaterOne);
 //Algorithm Decisions (choice)
 //Aspect Ratio
-if () {} else {} //End IF Aspect Ratio
+//if () {} else {} //End IF Aspect Ratio;
 
 
 
