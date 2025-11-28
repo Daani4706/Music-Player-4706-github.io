@@ -82,5 +82,6 @@ if ( imageHeightAdjusted1 > imageHeight ) {
 //
 
 image( image1,imageX, imageY, imageWidth, imageHeight);
+//image( image1, imageX, imageY, imageWidthAdjusted1, imageHeightAdjusted1 );
 //
 //End Program
