@@ -4,7 +4,7 @@
 //
 //Display
 fullScreen(); //Landscape
-size(1280/960); //Portrait
+//size(1280/960); //Portrait
 int appWidth = width; //displayWidth
 int appHeight = height; //displayHeight
 //println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight);
@@ -34,7 +34,7 @@ if ( image1 == null ) {
   image1 = errorImage;
   exit(); //handled whenever the computer uses this part or Memory
 }
-//Demonstrates alternate way to load an image without a pathway
+//Demonstrates alternate way to load an image without a Pathway
 //
 int imageWidth1 = 1280; //Hardcoded
 int imageHeight1 = 960; //Hardcoded
@@ -43,30 +43,30 @@ float image1AspectRatio_GreaterOne = ( imageWidth1 >= imageHeight1 ) ? float(ima
 //ERROR, int populating float: truncating-adding zeros, casting
 /* Line Notes
  - Hardcoded Greater-Than-One Aspect Ratio, x or / >1 or <1
- - 2D information from Image, Apsect Ratio Number
+ - 2D information from Image, Aspect Ratio Number
  - Answers how to make image bigger or smaller
  - Computer calculated DIV width & height
  - Computer needs to compare image to DIV size difference
  */
-//println("Testing for Decimals, formula unsing ints:", imageWidth1/imageHeight1);
+//println("Testing for Decimals, formula using ints:", imageWidth1/imageHeight1);
 //println("After casting added, Aspect Ratio >1:", image1AspectRatio_GreaterOne);
 //Algorithm Decisions (choice)
-float imageWidthAdjusted1 = imageDivWidth;
-float imageHeightAdjusted1 = ( imageWidth1 >= imageDivWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreaterOne : imageWidthAdjusted1 / image1AspectRatio_GreaterOne ; //Ternary Operator
+float imageWidthAdjusted1 = imageWidth;
+float imageHeightAdjusted1 = ( imageWidth1 >= imageWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreaterOne : imageWidthAdjusted1 / image1AspectRatio_GreaterOne ; //Ternary Operator
 //Verification: looks good
-if ( imageHeightAdjusted1 > imageDivHeight ) {
+if ( imageHeightAdjusted1 > imageHeight ) {
   println("Image doesn't fit, program ended ... Fatal Flaw, must be solved ... Image doesn't show.");
   //exit();
-  while ( imageHeightAdjusted1>imageDivHeight ) {
+  while ( imageHeightAdjusted1>imageHeight ) {
     imageWidthAdjusted1 *= 0.99;
     imageHeightAdjusted1 = imageWidthAdjusted1/image1AspectRatio_GreaterOne;
-    //println("Inspection of percent decrase:", imageWidthAdjusted1, imageHeightAdjusted1, imageDivHeight);
+    //println("Inspection of percent decrease:", imageWidthAdjusted1, imageHeightAdjusted1, imageHeight);
   }
   //
 }
 //
 //DIV
-rect(imageX, imageY, imageWidth, imageHeight);
+ rect(imageX, imageY, imageWidth, imageHeight);
 //
 
 image( image1,imageX, imageY, imageWidth, imageHeight);
