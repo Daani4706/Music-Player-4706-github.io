@@ -36,8 +36,8 @@ if ( image1 == null ) {
 }
 //Demonstrates alternate way to load an image without a Pathway
 //
-int imageWidth1 = 1280; //Hardcoded
-int imageHeight1 = 960; //Hardcoded
+int imageWidth1 = 7392; //Hardcoded
+int imageHeight1 = 5568; //Hardcoded
 //Aspect Ratio
 float image1AspectRatio_GreaterOne = ( imageWidth1 >= imageHeight1 ) ? float(imageWidth1)/float(imageHeight1) : float(imageHeight1)/float(imageWidth1) ; //Ternary Operator
 //ERROR, int populating float: truncating-adding zeros, casting
@@ -59,7 +59,7 @@ if ( imageHeightAdjusted1 > imageHeight ) {
   //exit();
   int indexWhile = 0; //Local Variable to IF-Statement
   //**WHILE Loops can run infintely with an error if not controlled
-  while ( imageHeightAdjusted1<imageHeight ) {
+  while ( imageHeightAdjusted1 > imageHeight ) {
     println ("Iteration of Percent WHILE Loop", indexWhile++); //prints the value, then adds one, order is important in AP
     if ( indexWhile < 10000) {
     //Checking Image Size
@@ -70,9 +70,14 @@ if ( imageHeightAdjusted1 > imageHeight ) {
      imageHeightAdjusted1 = imageHeight; //makes WHILE False, stops WHILE
     } // End Check infinite loop
     //Image Adjustment Percent v Pixel
-    imageWidthAdjusted1 *= 0.70; // -= 1
+    imageWidthAdjusted1 *= 0.99; // -= 1
     imageHeightAdjusted1 = imageWidthAdjusted1/image1AspectRatio_GreaterOne;
-    println("Inspection of percent decrease:", imageWidthAdjusted1, imageHeightAdjusted1, imageHeight);
+    //
+    if (imageWidth > imageHeight){
+    imageWidthAdjusted1 += imageWidth - imageWidthAdjusted1; 
+    } else {
+       imageHeightAdjusted1 += imageWidth - imageHeightAdjusted1;
+    }
   } //End WHILE
   //
 } // End IF
@@ -81,7 +86,7 @@ if ( imageHeightAdjusted1 > imageHeight ) {
  rect(imageX, imageY, imageWidth, imageHeight);
 //
 
-image( image1,imageX, imageY, imageWidth, imageHeight);
-//image( image1, imageX, imageY, imageWidthAdjusted1, imageHeightAdjusted1 );
+//image( image1,imageX, imageY, imageWidth, imageHeight);
+image( image1, imageX, imageY, imageWidthAdjusted1, imageHeightAdjusted1 );
 //
 //End Program
