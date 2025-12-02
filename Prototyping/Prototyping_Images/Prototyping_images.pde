@@ -16,8 +16,8 @@ float imageY = appHeight * 3.2/17.0;
 float imageWidth = appWidth * 9/28.0;
 float imageHeight = appHeight * 8.3/17.0;
 //Population Center
-float centerX = imageX + (imageWidth  - imageWidthAdjusted1) / 2;
-float centerY = imageY + (imageHeight - imageHeightAdjusted1) / 2;
+float center1X = imageX + (imageWidth  - imageWidthAdjusted1) / 2;
+float center1Y = imageY + (imageHeight - imageHeightAdjusted1) / 2;
 //
 //Image Aspect Ratio Vars & Algorithm
 //Directory or Pathway, Concatenation
@@ -88,7 +88,7 @@ if ( imageHeightAdjusted1 > imageHeight ) {
 //DIV
  rect(imageX, imageY, imageWidth, imageHeight);
 //
-image(image1, centerX, centerY, imageWidthAdjusted1, imageHeightAdjusted1);
+image(image1, center1X, center1Y, imageWidthAdjusted1, imageHeightAdjusted1);
 
 //image( image1,imageX, imageY, imageWidth, imageHeight);
 image( image1, imageX, imageY, imageWidthAdjusted1, imageHeightAdjusted1 );
