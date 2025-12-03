@@ -15,9 +15,6 @@ float imageX = appWidth * 0.5/28.0;
 float imageY = appHeight * 3.2/17.0;
 float imageWidth = appWidth * 9/28.0;
 float imageHeight = appHeight * 8.3/17.0;
-//Population Center
-float center1X = imageX + (imageWidth  - imageWidthAdjusted1) / 2;
-float center1Y = imageY + (imageHeight - imageHeightAdjusted1) / 2;
 //
 //Image Aspect Ratio Vars & Algorithm
 //Directory or Pathway, Concatenation
@@ -85,12 +82,15 @@ if ( imageHeightAdjusted1 > imageHeight ) {
   //
 } // End IF
 //
+// Centering the image inside the box
+float centeredX = imageX + (imageWidth - imageWidthAdjusted1) / 2;
+float centeredY = imageY + (imageHeight - imageHeightAdjusted1) / 2;
 //DIV
  rect(imageX, imageY, imageWidth, imageHeight);
-//
-image(image1, center1X, center1Y, imageWidthAdjusted1, imageHeightAdjusted1);
-
+//Image
 //image( image1,imageX, imageY, imageWidth, imageHeight);
-image( image1, imageX, imageY, imageWidthAdjusted1, imageHeightAdjusted1 );
+//image( image1, imageX, imageY, imageWidthAdjusted1, imageHeightAdjusted1 );
+// Centered
+image(image1, centeredX, centeredY, imageWidthAdjusted1, imageHeightAdjusted1);
 //
 //End Program
