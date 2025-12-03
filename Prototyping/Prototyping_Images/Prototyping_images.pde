@@ -23,7 +23,15 @@ String folder = "Lesson Dependancy Folder/Images/";
 String Butterfly = "Butterfly";
 String fileExtensionJPG = ".jpg";
 String imagePathway1 = upArrow + folder + Butterfly + fileExtensionJPG;
+//
+//Directory or Pathway, Concatenation - Cherry
+String upArrow2 = "../../";
+String folder2 = "Lesson Dependancy Folder/Images/";
+String Cherry = "Cherry";
+String fileExtensionJPG2 = ".jpg";
+String imagePathway2 = upArrow2 + folder2 + Cherry + fileExtensionJPG2;
 //println("Butterfly Pathway:", imagePathway1);
+//println("Cherry Pathway:", imagePathway1);
 //Image Loading & Aspect Ratio
 //
 //Possible ERROR: NullPointerException on the Image
@@ -34,12 +42,27 @@ if ( image1 == null ) {
   image1 = errorImage;
   exit(); //handled whenever the computer uses this part or Memory
 }
+//
+PImage errorImage2 = loadImage("Old man portrait.png");
+PImage image2 = loadImage(imagePathway2);
+if (image2 == null) {
+  println("NullPointerException on Image 2 ... Spelling Mistake with Pathway Concatenation");
+  image2 = errorImage2;
+  exit();
+}
+//
 //Demonstrates alternate way to load an image without a Pathway
 //
 int imageWidth1 = 7392; //Hardcoded
 int imageHeight1 = 5568; //Hardcoded
+//
+int imageWidth2 = 6720; //Hardcoded
+int imageHeight2 = 4480; //Hardcoded
 //Aspect Ratio
 float image1AspectRatio_GreaterOne = ( imageWidth1 >= imageHeight1 ) ? float(imageWidth1)/float(imageHeight1) : float(imageHeight1)/float(imageWidth1) ; //Ternary Operator
+//
+float image2AspectRatio_GreaterOne = (imageWidth2 >= imageHeight2) ? float(imageWidth2)/float(imageHeight2) : float(imageHeight2)/float(imageWidth2); 
+//
 //ERROR, int populating float: truncating-adding zeros, casting
 /* Line Notes
  - Hardcoded Greater-Than-One Aspect Ratio, x or / >1 or <1
@@ -53,7 +76,11 @@ float image1AspectRatio_GreaterOne = ( imageWidth1 >= imageHeight1 ) ? float(ima
 //Algorithm Decisions (choice)
 float imageWidthAdjusted1 = imageWidth;
 float imageHeightAdjusted1 = ( imageWidth1 >= imageWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreaterOne : imageWidthAdjusted1 / image1AspectRatio_GreaterOne ; //Ternary Operator
-//Verification: looks good
+//
+float imageWidthAdjusted2 = imageWidth;
+float imageHeightAdjusted2 = imageWidthAdjusted2 / ((float)imageWidth2 / (float)imageHeight2);
+//
+//Verification: looks good - 1
 if ( imageHeightAdjusted1 > imageHeight ) {
   println("Image doesn't fit, program ended ... Fatal Flaw, must be solved ... Image doesn't show.");
   //exit();
@@ -82,15 +109,38 @@ if ( imageHeightAdjusted1 > imageHeight ) {
   //
 } // End IF
 //
-// Centering the image inside the box
+//Verification: Image 2 fits in box
+if (imageHeightAdjusted2 > imageHeight) {
+  int indexWhile2 = 0;
+  while (imageHeightAdjusted2 > imageHeight) {
+    println("Iteration of Percent WHILE Loop (Image 2)", indexWhile2++);
+    if (indexWhile2 > 10000) {
+      println("ERROR: infinite loop, Image Percent WHILE (Image 2), value:", indexWhile2);
+      break;
+    }
+    // Shrink image by 1% each iteration
+    imageWidthAdjusted2 *= 0.99;
+    imageHeightAdjusted2 = imageWidthAdjusted2 / ((float)imageWidth2 / (float)imageHeight2);
+  }
+}
+//
+// Centering the image inside the box - 1
 float centeredX = imageX + (imageWidth - imageWidthAdjusted1) / 2;
 float centeredY = imageY + (imageHeight - imageHeightAdjusted1) / 2;
+// Centering the image inside the box - 2
+float centeredX2 = imageX + (imageWidth - imageWidthAdjusted2) / 2;
+float centeredY2 = imageY + (imageHeight - imageHeightAdjusted2) / 2;
 //DIV
  rect(imageX, imageY, imageWidth, imageHeight);
-//Image
+//Image - 1
 //image( image1,imageX, imageY, imageWidth, imageHeight);
 //image( image1, imageX, imageY, imageWidthAdjusted1, imageHeightAdjusted1 );
-// Centered
-image(image1, centeredX, centeredY, imageWidthAdjusted1, imageHeightAdjusted1);
+//Image - 2
+//image( image2,imageX, imageY, imageWidth, imageHeight);
+//image( image2, imageX, imageY, imageWidthAdjusted2, imageHeightAdjusted2 );
+// Centered - 1
+//image(image1, centeredX, centeredY, imageWidthAdjusted1, imageHeightAdjusted1);
+// Centered - 2
+image(image2, centeredX2, centeredY2, imageWidthAdjusted2, imageHeightAdjusted2);
 //
 //End Program
