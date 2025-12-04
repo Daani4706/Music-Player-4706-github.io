@@ -9,7 +9,6 @@ int appWidth = width; //displayWidth
 int appHeight = height; //displayHeight
 //println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight);
 //println("\t\t\t\tFullScreen, displayWidth:\t"+displayWidth, "\tdisplayHeight:\t"+displayHeight, "\n\t\t\t\tSize\t, width:\t\t"+width, "\height:\t\t"+height);
-//
 //Population
 float imageX = appWidth * 0.5/28.0;
 float imageY = appHeight * 3.2/17.0;
@@ -17,7 +16,7 @@ float imageWidth = appWidth * 9/28.0;
 float imageHeight = appHeight * 8.3/17.0;
 //
 //Image Aspect Ratio Vars & Algorithm
-//Directory or Pathway, Concatenation
+//Directory or Pathway, Concatenation - Butterfly
 String upArrow = "../../";
 String folder = "Lesson Dependancy Folder/Images/";
 String Butterfly = "Butterfly";
@@ -42,7 +41,7 @@ if ( image1 == null ) {
   image1 = errorImage;
   exit(); //handled whenever the computer uses this part or Memory
 }
-//
+//Possible ERROR: NullPointerException on the Image
 PImage errorImage2 = loadImage("Old man portrait.png");
 PImage image2 = loadImage(imagePathway2);
 if (image2 == null) {
@@ -60,7 +59,7 @@ int imageWidth2 = 6720; //Hardcoded
 int imageHeight2 = 4480; //Hardcoded
 //Aspect Ratio
 float image1AspectRatio_GreaterOne = ( imageWidth1 >= imageHeight1 ) ? float(imageWidth1)/float(imageHeight1) : float(imageHeight1)/float(imageWidth1) ; //Ternary Operator
-//
+//Aspect Ratio
 float image2AspectRatio_GreaterOne = (imageWidth2 >= imageHeight2) ? float(imageWidth2)/float(imageHeight2) : float(imageHeight2)/float(imageWidth2); 
 //
 //ERROR, int populating float: truncating-adding zeros, casting
@@ -76,7 +75,7 @@ float image2AspectRatio_GreaterOne = (imageWidth2 >= imageHeight2) ? float(image
 //Algorithm Decisions (choice)
 float imageWidthAdjusted1 = imageWidth;
 float imageHeightAdjusted1 = ( imageWidth1 >= imageWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreaterOne : imageWidthAdjusted1 / image1AspectRatio_GreaterOne ; //Ternary Operator
-//
+//Algorithm Decisions (choice)
 float imageWidthAdjusted2 = imageWidth;
 float imageHeightAdjusted2 = imageWidthAdjusted2 / ((float)imageWidth2 / (float)imageHeight2);
 //
@@ -109,7 +108,7 @@ if ( imageHeightAdjusted1 > imageHeight ) {
   //
 } // End IF
 //
-//Verification: Image 2 fits in box
+//Verification: looks good - 2
 if (imageHeightAdjusted2 > imageHeight) {
   int indexWhile2 = 0;
   while (imageHeightAdjusted2 > imageHeight) {
