@@ -1,133 +1,91 @@
 /* Multiple Images
- - Creating and using Arrays
- - An Introduction to naming variables
+ - Using your variable names
+ - Keeping teacher's array logic
  */
 //
-//Display
-//fullScreen(); //Landscape
+fullScreen(); //Landscape
+// Display
 size(500, 100); //Portrait, testing smaller DIVs ONLY
-int appWidth = width; //displayWidth
-int appHeight = height; //displayHeight
-//println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight);
-//println("\t\t\t\tFullScreen, displayWidth:\t"+displayWidth, "\tdisplayHeight:\t"+displayHeight, "\n\t\t\t\tSize\t, width:\t\t"+width, "\theight:\t\t"+height);
+int appWidth = width;
+int appHeight = height;
 //
-//Population
-float imageDivX = appWidth*1/4; //**Akward DIV
-float imageDivY = appHeight*1/10;
-float imageDivWidth = appWidth*1/2;
-float imageDivHeight = appHeight*4/5; // ** Make smaller to test height
+// Population (box for images)
+float imageX = appWidth * 0.5/28.0;
+float imageY = appHeight * 3.2/17.0;
+float imageWidth = appWidth * 9/28.0;
+float imageHeight = appHeight * 8.3/17.0;
 //
-//Image Aspect Ratio Vars & Algorithm
-int numberOfImages = 2; //Best Practice
-int i = 0; //index for ARRAYs
-/* Index Legend for Images
- i=0 // Bike
- i=1 // Old Man
+// Image Aspect Ratio Vars & Algorithm
+int numberOfImages = 2; 
+int i = 0; 
+/* Index Legend
+ i=0 // Butterfly
+ i=1 // Cherry
  */
-//Directory or Pathway, Concatenation
+//
+// Directory or Pathway, Concatenation
 String upArrow = "../../";
-String folder = "Lesson Dependancies Folder/Images/"; //**Akward
+String folder = "Lesson Dependancy Folder/Images/";
 String[] fileName = new String[numberOfImages];
-fileName[0] = "bike"; //Rename-Copy OS Function & MouseClick
-fileName[1] = "Old man portrait"; //Rename-Copy OS Function & MouseClick
+fileName[0] = "Butterfly"; 
+fileName[1] = "Cherry"; 
 String[] fileExtension = new String[numberOfImages];
-fileExtension[0] = ".jpg"; //What is leftover after rename function
-fileExtension[1] = ".png"; //What is leftover after rename function
+fileExtension[0] = ".jpg"; 
+fileExtension[1] = ".jpg"; 
 String[] imagePathway = new String[numberOfImages];
 imagePathway[i] = upArrow + folder + fileName[i] + fileExtension[i];
-//println(imagePathway[i]);
-//Note: Computer should be able to read a directory or pathway (intermediate code)
-//Image Loading & Aspect Ratio
-//Possible ERROR: NullPointerException on the Image-Variable
-int numberOfErrorImages = 1; //Best Practice, but not used here
+//
+// Image Loading & Aspect Ratio
 PImage[] image = new PImage[numberOfImages];
-image[i] = loadImage( imagePathway[i] ); //Emphasizes numbers so computer will track, human does not
-//Can be summarized with FOR Loop
-//ERROR Check: loadImage()
-PImage errorImage = loadImage( "Old man ERROR.png" );
-//Error image without need for pathway
-//Error image allows image() to be completed, notifying user of error
-//Demonstrates alternate way to load an image without a pathway
-if ( image[i] == null ) {
-  println("NullPointerException on Image ... Spelling Mistake with Pathway Concatenation");
+image[i] = loadImage(imagePathway[i]);
+PImage errorImage = loadImage("Old man portrait.png"); // fallback
+if (image[i] == null) {
+  println("NullPointerException on Image ...");
   image[i] = errorImage;
-  exit(); //handled whenever the computer uses this part or Memory
+  exit();
 }
-int[] imageWidth = new int[numberOfImages];
-int[] imageHeight = new int[numberOfImages];
-imageWidth[0] = 860; //Hardcoded, computer should be able to read this (Intermediate Code)
-imageHeight[0] = 529; //Hardcoded, see image-properties
-imageWidth[1] = 2800; //Hardcoded, computer should be able to read this (Intermediate Code)
-imageHeight[1] = 3500; //Hardcoded
-//Aspect Ratio
-//Note: code only executes once, one one Aspect Ratio Var required
-float imageAspectRatio_GreaterOne = ( imageWidth[i] >= imageHeight[i] ) ? float(imageWidth[i])/float(imageHeight[i]) : float(imageHeight[i])/float(imageWidth[i]) ; //Ternary Operator
-//ERROR, int populating float: truncating-adding zeros, casting
-/* Line Notes
- - Hardcoded Greater-Than-One Aspect Ratio, x or / >1 or <1
- - 2D information from Image, Apsect Ratio Number
- - Answers how to make image bigger or smaller
- - Computer calculated DIV width & height
- - Computer needs to compare image to DIV size difference
- */
-//println("Testing for Decimals, formula unsing ints:", imageWidth[i]/imageHeight[i]);
+//
+// Hardcoded Image Dimensions
+int[] imageW = new int[numberOfImages];
+int[] imageH = new int[numberOfImages];
+imageW[0] = 7392; 
+imageH[0] = 5568; 
+imageW[1] = 6720; 
+imageH[1] = 4480; 
+//
+// Aspect Ratio
+float imageAspectRatio_GreaterOne = (imageW[i] >= imageH[i]) ? float(imageW[i])/float(imageH[i]) : float(imageH[i])/float(imageW[i]);
 println("After casting added, Aspect Ratio >1:", imageAspectRatio_GreaterOne);
-//Algorithm Decisions (choice)
+//
+// Adjusted Image Size
 float[] imageWidthAdjusted = new float[numberOfImages];
 float[] imageHeightAdjusted = new float[numberOfImages];
-imageWidthAdjusted[i] = imageDivWidth; //works for any image
-imageHeightAdjusted[i] = ( imageWidth[i] >= imageDivWidth ) ? imageWidthAdjusted[i]/imageAspectRatio_GreaterOne : imageWidthAdjusted[i]*imageAspectRatio_GreaterOne ; //Ternary Operator
-//Verification: looks good
-//IF-statements, include more code than a phrase of
-if ( imageHeightAdjusted[i] > imageDivHeight ) {
-  //println("Image doesn't fit, program ended ... Fatal Flaw, must be solved ... Image doesn't show.");
-  //exit();
-  int indexWhile = 0; //Local Variable to IF-Statement
-  //** WHILE Loops can run infinitely with an error if not controlled
-  while ( imageHeightAdjusted[i]>imageDivHeight ) {
-    println("Iteration of Percent WHILE Loop", indexWhile++); //prints value, then adds one, order is important in AP
-    if ( indexWhile < 10000 ) {
-      //Checking Image Size, below
-    } else {
-      //ERROR: Infinite Loop
-      println("ERROR: infinite loop, Image Percent WHILE, value:", indexWhile);
-      exit(); //doesn't work, must force WHILE Stop
-      imageHeightAdjusted[i]=imageDivHeight; //makes WHILE False, stops WHILE
-    } //End Check Infinite loop
-    //Image Adjustment Percent v Pixel
-    imageWidthAdjusted[i] *= 0.99; // -= 1
+imageWidthAdjusted[i] = imageWidth;
+imageHeightAdjusted[i] = (imageW[i] >= imageWidth) ? imageWidthAdjusted[i]*imageAspectRatio_GreaterOne : imageWidthAdjusted[i]/imageAspectRatio_GreaterOne;
+//
+// Verification & Scaling
+if (imageHeightAdjusted[i] > imageHeight) {
+  int indexWhile = 0;
+  while (imageHeightAdjusted[i] > imageHeight) {
+    println("Iteration Percent WHILE Loop", indexWhile++);
+    if (indexWhile > 10000) {
+      println("ERROR: infinite loop, Image Percent WHILE");
+      exit();
+      imageHeightAdjusted[i] = imageHeight;
+    }
+    imageWidthAdjusted[i] *= 0.99;
     imageHeightAdjusted[i] = imageWidthAdjusted[i]/imageAspectRatio_GreaterOne;
-    println("Inspection of percent decrase:", imageWidthAdjusted[i], imageHeightAdjusted[i], imageDivHeight);
-  } //End WHILE
-  //Percent will be too small, must count back up but be smaller than total iterations
-  /* Accuracy Comment, for AP Students
-   - When % change is too much, go back to the previous answer, decrease percent until decreasing pixels is most accurate
-   - Need to answer what is accurate
-   - FYI: 1% gets within 3 pixels of actual answer
-   - AP Project: combine into faster answer by counting lines of code executed
-   */
-  /* Teacher ONLY: compare to Percent Decrease for Program Speed, minimum lines of code measure
-   while ( imageHeightAdjusted[i]<imageDivHeight ) {
-   println("Iteration of Pixel WHILE Loop", indexWhile++); //prints value, then adds one, order is important in AP
-   if ( indexWhile < 10000 ) {
-   //Checking Image Size
-   } else {
-   //ERROR: Infinite Loop
-   println("ERROR: infinite loop, Image Pixel WHILE, value:", indexWhile);
-   //exit(); //doesn't work, must force WHILE Stop
-   imageHeightAdjusted[i]=imageDivHeight;
-   }
-   imageHeightAdjusted[i]++;
-   println("Inspection of Pixel decrease:", imageWidthAdjusted[i], imageHeightAdjusted[i], imageDivHeight);
-   } //End WHILE Error Check, Counting Up
-   */
-  //
-} //END IF
+  }
+}
 //
-//DIV
-rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
+// Centering inside the box
+float centeredX = imageX + (imageWidth - imageWidthAdjusted[i])/2;
+float centeredY = imageY + (imageHeight - imageHeightAdjusted[i])/2;
 //
-//image( image1, imageDivX, imageDivY, imageDivWidth, imageDivHeight );
-image( image[i], imageDivX, imageDivY, imageWidthAdjusted[i], imageHeightAdjusted[i] );
+// Draw Box
+rect(imageX, imageY, imageWidth, imageHeight);
 //
-//End Program
+// Draw Image
+image(image[0], centeredX, centeredY, imageWidthAdjusted[i], imageHeightAdjusted[i]);
+//
+// End Program
