@@ -15,9 +15,18 @@ float stringimageY = appHeight * 3.2/17.0;
 float stringimageWidth = appWidth * 9/28.0;
 float stringimageHeight = appHeight * 8.3/17.0;
 //
-//Strings, Text, littearaly
+//Strings, Text, literally
 String title = "Daaani!";
 //
+/*
+println("Start of Console"); //ERROR: in case console Memory not enough
+String[] fontList = PFont.list(); 
+printArray(fontList);
+*/
+int fontSize = 55; // Entire program
+PFont titleFont; // font Var name
+String Consolas-BoldItalic = "Consolas Bold Italic";
+titleFont = createFont (Consolas-BoldItalic,fontSize);
 //Note: DIV to "see" variables
  rect(stringimageX, stringimageY, stringimageWidth, stringimageHeight);
  //
