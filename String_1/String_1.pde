@@ -17,33 +17,33 @@ float stringimageHeight = appHeight * 8.3/17.0;
 //
 //Strings, Text, literally
 String title = "Daaani!";
-/* Full String longer than Rectangle,  "Daaani! I changed 2D Size."
+/*Full String longer than Rectangle,  "Daaani! I changed 2D Size."
  - When a String just fits the height aspect ratio is the largest, sometimes >1
  - Fonts differs in WHITE SPACE around the foreground "coloured ink"
-/* Fonts from OS
+ */
+ /*Fonts from OS
 println("Start of Console"); //ERROR: in case console Memory not enough
  String[] fontList = PFont.list();
  printArray(fontList);
- */
-
+*/
 float fontSize = appHeight; // Entire program
 PFont titleFont; // font Var name
-String GillSansNovaUltraBold= "Gill Sans Nova Ultra Bold";
-titleFont = createFont ("GillSansNovaUltraBold", fontSize);
+String CorbelBoldItalic= "Corbel Bold Italic";
+titleFont = createFont (CorbelBoldItalic, fontSize);
 //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
 //
-println(fontSize,GillSansNovaUltraBold, titleFont);
-float fontSizeGillSansNovaUltraBold = 88.0;
-//Hardcoded fontSizeGillSansNovaUltraBold
-println("fontSize:", fontSize);
+println(fontSize, CorbelBoldItalic, titleFont);
+float fontSizeCorbelBoldItalic = 88.0;
+//Hardcoded fontSizeCorbelBoldItalic
+println("Font Size:", fontSize);
 /* Aspect Ratio Manipulations (changes to variables)
 - choose Aspect Radio that must be mutliplied: fontSize/titleHeight
 - Rewriting fontSize with formula
 */
 //
-float GillSansNovaUltraBolAspectRatio = fontSizeGillSansNovaUltraBold / stringimageHeight;
-fontSize = stringimageHeight * GillSansNovaUltraBolAspectRatio;
-println("GillSansNovaUltraBoldAspectRatio:",GillSansNovaUltraBolAspectRatio);
+float CorbelBoldItalicAspectRatio = fontSizeCorbelBoldItalic / stringimageHeight;
+fontSize = stringimageHeight * CorbelBoldItalicAspectRatio;
+println("Corbel Bold Italic Aspect Ratio:",CorbelBoldItalicAspectRatio);
 println(); //Skip a line
 //
 //Note: DIV to "see" variables
