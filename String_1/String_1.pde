@@ -74,7 +74,7 @@ textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
 textFont(titleFont, fontSize);
 float constrantDecrease = 0.99;  //99% of origonal or 1% decrease (larger #'s have  bigger decrease)
 // For loop error, copy & paste three times
-for( i=1; i<=3; i++){
+for( int i=0; i<3; i++){
 while ( textWidth( title)> stringlyricsWidth[i] ) {
   //ERROR: infinite loop, requires exit() & println()
   fontSize *= constrantDecrease; // Assignment Operator // fontSize = fontSize * 0.99
@@ -86,7 +86,7 @@ while ( textWidth( title)> stringlyricsWidth[i] ) {
 // textFont() has option to combine font declaration with textSize
 //textFont() is better for more than one PFont Variable
 //
-text(title, stringlyricsX1, stringlyricsY1, stringlyricsWidth1, stringlyricsHeight1);
+text(title, stringlyricsX[i], stringlyricsY1, stringlyricsWidth1, stringlyricsHeight1);
 text(title, stringlyricsX2, stringlyricsY2, stringlyricsWidth2, stringlyricsHeight2);
 text(title, stringlyricsX3, stringlyricsY3, stringlyricsWidth3, stringlyricsHeight3);
 fill(resetInk);
