@@ -5,30 +5,39 @@ int appWidth = displayWidth; //width
 int appHeight = displayHeight; //height
 //
 //Population
-int numberOfDIVs = 3;
-float[] stringDivX = new float[numberOfDIVs];
-float[] stringDivY = new float[numberOfDIVs];
-float[] stringDivWidth = new float[numberOfDIVs];
-float[] stringDivHeight = new float[numberOfDIVs];
-stringDivX[0] = appWidth*1/4; //**Akward DIV
-stringDivY[0] = appHeight*1/10;
-stringDivWidth[0] = appWidth*1/2;
-stringDivHeight[0] = appHeight*1/10; // ** Make smaller to test height
-stringDivX[1] = stringDivX[0]; //Cascading VARs
-stringDivY[1] = appHeight*3/10;
-stringDivWidth[1] = appWidth*1/4;
-stringDivHeight[1] = stringDivHeight[0]; //Cascading VARs
-stringDivX[2] = stringDivX[0]; //Cascading VARs, best practice
-stringDivY[2] = appHeight*5/10;
-stringDivWidth[2] = appWidth*5/8;
-stringDivHeight[2] = stringDivHeight[0]; //Cascading VARs, best practice
+int numberOfDIVs = 4;
+float[] stringMainX = new float[numberOfDIVs];
+float[] stringMainY = new float[numberOfDIVs];
+float[] stringMainWidth = new float[numberOfDIVs];
+float[] stringMainHeight = new float[numberOfDIVs];
+//
+stringMainX[0] = appWidth * 0.5/28.0;
+stringMainY[0] = appHeight * 1/17.0;
+stringMainWidth[0] = appWidth * 5.2/28.0;
+stringMainHeight[0] = appHeight * 2/17.0;
+//
+stringMainX[1] = stringMainX[0];
+stringMainY[1] = appHeight * 6/17.0;
+stringMainWidth[1] = appWidth * 4/28.0;
+stringMainHeight[1] = stringMainHeight[0];
+//
+stringMainX[2] = stringMainX[0];
+stringMainY[2] = appHeight * 9/17.0;
+stringMainWidth[2] = appWidth * 7/28.0;
+stringMainHeight[2] = stringMainHeight[0];
+//
+stringMainX[3] = stringMainX[0];
+stringMainY[3] = appHeight * 9/17.0;
+stringMainWidth[3] = appWidth * 7/28.0;
+stringMainHeight[3] = stringMainsHeight[0];
 //
 //Strings, Text, Literal
 String[] text = new String[numberOfDIVs]; //CAUTION: Data intentionally makes STRINGS=numberOfDIVs, one-to-one counting
-text[0] = "wahoo ... whipsered";
-text[1] = "This DIV is the Problem Child ... Child DIV is an alogorithm joke, see WHILE iterations.";
-text[2] = "I wish to be SEEN ... DIV is too big!";
-// Students enter all text from Case Study
+text[0] = "lyrics";
+text[1] = "info";
+text[2] = "artistName";
+text[3] = "songName";
+//
 //
 //Font Loading & Aspect Ratio
 float fontSize = appHeight;
@@ -41,7 +50,10 @@ float harringtonAspectRatio = fontSizeHarrington / divHeightHarrington;
 fontSize = stringDivHeight[0]*harringtonAspectRatio; 
 //
 for ( int i=0; i<numberOfDIVs; i++ ) {
-  rect( stringDivX[i], stringDivY[i], stringDivWidth[i], stringDivHeight[i] );
+  rect(lyricsX, lyricsY, lyricsWidth, lyricsHeight);
+  rect(infoX, infoY, infoWidth, infoHeight);
+  rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
+  rect(songNameX, songNameY, songNameWidth, songNameHeight);
 } //End FOR DIVs
 //
 //Drawing Text
