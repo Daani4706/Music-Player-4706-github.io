@@ -33,10 +33,10 @@ stringMainHeight[3] = appHeight * 1/17.0;// 2/17.0
 //
 //Strings, Text, Literal
 String[] text = new String[numberOfDIVs]; //CAUTION: Data intentionally makes STRINGS=numberOfDIVs, one-to-one counting
-text[0] = "lyrics";
-text[1] = "info";
-text[2] = "artistName";
-text[3] = "songName";
+text[0] = "Lyrics";
+text[1] = "Information of the song";
+text[2] = "Artist Name";
+text[3] = "Song Name";
 //
 /*Full String longer than Rectangle, "Lyrics!" 
  - When a String just fits the height aspect ratio is the largest, sometimes >1
