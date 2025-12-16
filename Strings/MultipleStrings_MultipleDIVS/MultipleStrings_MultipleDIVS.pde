@@ -24,12 +24,12 @@ stringMainHeight[1] = appHeight * 2/17.0;
 stringMainX[2] = appWidth * 9.9/28.0;
 stringMainY[2] = appHeight * 3.2/17.0;
 stringMainWidth[2] = appWidth * 14.5/28.0;
-stringMainHeight[2] = appHeight * 1/17.0;
+stringMainHeight[2] = appHeight * 1/17.0;// 2/17.0
 //
 stringMainX[3] = appWidth * 9.9/28.0;
 stringMainY[3] = appHeight * 4.7/17.0;
 stringMainWidth[3] = appWidth * 14.5/28.0;
-stringMainHeight[3] = appHeight * 1/17.0;
+stringMainHeight[3] = appHeight * 1/17.0;// 2/17.0
 //
 //Strings, Text, Literal
 String[] text = new String[numberOfDIVs]; //CAUTION: Data intentionally makes STRINGS=numberOfDIVs, one-to-one counting
@@ -94,6 +94,10 @@ int iWhile = 0; // counting iterations
 //
 // For loop error, copy & paste three times (teacher style)
 for( int i=0; i<4; i++){
+  fontSize = stringMainHeight[i] * CorbelBoldItalicAspectRatio;
+  textFont(titleFont, fontSize);
+  // Reset font size for each DIV
+  // Prevents font from becoming too small for later DIVs
   while ( textWidth(text[i]) > stringMainWidth[i] ) {
     //ERROR: infinite loop, requires exit() & println()
     fontSize *= constantDecrease; // Assignment Operator // fontSize = fontSize * 0.99
