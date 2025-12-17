@@ -17,7 +17,7 @@ float imageHeight = appHeight * 8.3/17.0;
 //
 // Image Aspect Ratio Vars & Algorithm
 int numberOfImages = 2; 
-int i = 0; 
+int i = 0; // 
 /* Index Legend
  i=0 // Butterfly
  i=1 // Cherry
@@ -54,38 +54,34 @@ imageW[1] = 6720;
 imageH[1] = 4480; 
 //
 // Aspect Ratio
-float imageAspectRatio_GreaterOne = (imageW[i] >= imageH[i]) ? float(imageW[i])/float(imageH[i]) : float(imageH[i])/float(imageW[i]);
-println("After casting added, Aspect Ratio >1:", imageAspectRatio_GreaterOne);
+float imageAspectRatio_GreaterOne =
+  (imageW[i] >= imageH[i]) ?
+  float(imageW[i]) / float(imageH[i]) :
+  float(imageH[i]) / float(imageW[i]);
 //
 // Adjusted Image Size
 float[] imageWidthAdjusted = new float[numberOfImages];
 float[] imageHeightAdjusted = new float[numberOfImages];
 imageWidthAdjusted[i] = imageWidth;
-imageHeightAdjusted[i] = (imageW[i] >= imageWidth) ? imageWidthAdjusted[i]*imageAspectRatio_GreaterOne : imageWidthAdjusted[i]/imageAspectRatio_GreaterOne;
+imageHeightAdjusted[i] = imageWidthAdjusted[i] / imageAspectRatio_GreaterOne;
 //
 // Verification & Scaling
 if (imageHeightAdjusted[i] > imageHeight) {
-  int indexWhile = 0;
   while (imageHeightAdjusted[i] > imageHeight) {
-    println("Iteration Percent WHILE Loop", indexWhile++);
-    if (indexWhile > 10000) {
-      println("ERROR: infinite loop, Image Percent WHILE");
-      exit();
-      imageHeightAdjusted[i] = imageHeight;
-    }
     imageWidthAdjusted[i] *= 0.99;
-    imageHeightAdjusted[i] = imageWidthAdjusted[i]/imageAspectRatio_GreaterOne;
+    imageHeightAdjusted[i] = imageWidthAdjusted[i] / imageAspectRatio_GreaterOne;
   }
 }
 //
 // Centering inside the box
-float centeredX = imageX + (imageWidth - imageWidthAdjusted[i])/2;
-float centeredY = imageY + (imageHeight - imageHeightAdjusted[i])/2;
+float centeredX = imageX + (imageWidth - imageWidthAdjusted[i]) / 2;
+float centeredY = imageY + (imageHeight - imageHeightAdjusted[i]) / 2;
 //
 // Draw Box
 rect(imageX, imageY, imageWidth, imageHeight);
 //
 // Draw Image
-image(image[0], centeredX, centeredY, imageWidthAdjusted[i], imageHeightAdjusted[i]);
+image(image[i], centeredX, centeredY,
+      imageWidthAdjusted[i], imageHeightAdjusted[i]);
 //
 // End Program
