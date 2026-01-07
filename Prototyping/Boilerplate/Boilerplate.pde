@@ -1,30 +1,36 @@
-// Hearing Music and Sound Effects
-//
-/* Program Documentation & Notes
- - Libraries add specific functions to ease programming burdon
- - Must add some libraries in the IDE and the code, like Minim
- - Global Varaibles on harddrive used throuhgout the program sections
- 
- - Folder Name matches first-tab or MAIN Program
- - setup() executes once, sets up all libraries & variables (and objects at the advanced level)
- - draw() maniuplates variables and how CANVAS looks
- - mousePressed() and keyPressed() are example listeners, interrupts draw(), then continues draw() at that line
- 
- - Once setup() is done, draw() starts looping
- - Can temporarily pause draw() with noLoop() & loop() to wait (behind booleans or interactions)
- - Note: delay() will stop the program for a specified time
- */
+/*Hearing Music and Sound Effects
+- Reading Code with CTRL-T & braces
+*/
 //
 //Library - Minim
-//
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
 //Global Variables
+Minim minim; //initates entire class
+int numberOfSongs = 1; //Best Practice
+int numberOfSoundEffects = 1; //Best Practice
+AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
+AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
+int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //
-void setup() {} //end setup
+void setup() {
+  size(500, 100); //width //height
+  //fullScreen(); //displayHeight //displayWidth
+  int appWidth = width;//best practice
+  int appHeight = height;
+} //end setup
 //
-void draw() {} // end setup
+void draw() {
+} // end setup
 //
-void mousePressed() {} //end Mouse Pressed
+void mousePressed() {
+} //end Mouse Pressed
 //
-void keyPressed() {} //end Key Pressed
+void keyPressed() {
+} //end Key Pressed
 //
 //End MAIN Program
