@@ -20,7 +20,7 @@ import ddf.minim.ugens.*;
 //
 //Global Varaibles
 Minim minim; //initates entire class
-int numberOfSongs = 1; //Best Practice
+int numberOfSongs = 3; //Best Practice
 int numberOfSoundEffects = 1; //Best Practice
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
@@ -33,21 +33,29 @@ int appWidth = width;
 int appHeight = height; 
 //
 //Music Loading - STRUCTURED Review
-minim = new Minim(this);
-String upArrow = "../../";
-String musicFolder = "Music/"; //Developer Secific
+minim = new Minim(this); //Manditory
+ String upArrow = "../../../";
+ String musicFolder = "Music/"; //Developer Specific 
+  String soundEffectsFolder = "Sound Effect/"; //Developer Specific
 String songName1 = "Cheri Cheri Lady";
+String soundEffect1 = "Spring_Attic_Door";
 String fileExtension_mp3 = ".mp3";
 //
 String musicDirectory = upArrow + musicFolder; //Concatenation
-String file = musicDirectory + songName1 + fileExtension_mp3;
+String soundEffectsDirectory = upArrow + musicFolder + soundEffectsFolder; //Concatenation
+ String file = musicDirectory + songName1 + fileExtension_mp3; //TO BE Rewritten and deleted once file is LOADED
+  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+ file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
+ soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+ //
 println("Music Pathway",musicDirectory);
 println("Full Music File Pathway", file);
-
+//
 playList[ currentSong ] = minim.loadFile(file); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
 //
-if ( playList[currentSong]==null){ //ERROR, play list is Null
-  //see FILE or minim.loadFile
-  println("Did this music and sound load properly");
-  printArray(playList);
-}
+  if ( playList[currentSong]==null || soundEffects[currentSong]==null) { //ERROR, play list is NULL
+    //See FILE or minim.loadFile
+    println("The Play List or Sound Effects did not load properly");
+    printArray(playList);
+    printArray(soundEffects);
+  }
