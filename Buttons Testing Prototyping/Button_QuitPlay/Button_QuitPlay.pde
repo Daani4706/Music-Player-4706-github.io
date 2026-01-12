@@ -33,6 +33,9 @@ float playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3;
 //
 Boolean playButton=false;
 //
+color restBackground, resetInk;
+color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
+//
 void setup() {
   //Display
   size(500,100);
@@ -73,6 +76,23 @@ line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
 line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
 rect(playSongX, playSongY, playSongWidth, playSongHeight);
 triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
+//
+// Colour Population
+color black = 0; //Gray Scale, much smaller color, 256
+color white = 0; //Gray Scale
+//CANVAS: default background and ink
+resetBackground = white;
+resetInk = black;
+//Button Colours
+color purple = #F0B1FA;
+color black = #050505;
+color grayscale = 256/2;
+playColourBackground = black;
+playColourSymbol = purple;
+playColourBackgroundActivated = purple;
+playColourSymbolActivated = black;
+
+//
 } //End setup
 //
 void draw() {
