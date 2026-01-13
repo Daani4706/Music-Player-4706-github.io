@@ -33,8 +33,9 @@ float playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3;
 //
 Boolean playButton=false;
 //
-color restBackground, resetInk;
+color resetBackground, resetInk;
 color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
+color quitBackground, quitBackgroundActivated;
 //
 void setup() {
   //Display
@@ -79,32 +80,53 @@ triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3)
 //
 // Colour Population
 color black = 0; //Gray Scale, much smaller color, 256
-color white = 0; //Gray Scale
+color white = 255; //Gray Scale
 //CANVAS: default background and ink
 resetBackground = white;
 resetInk = black;
 //Button Colours
+color red = #FF0000;
 color purple = #F0B1FA;
-color black = #050505;
 color grayscale = 256/2;
 playColourBackground = black;
 playColourSymbol = purple;
 playColourBackgroundActivated = purple;
 playColourSymbolActivated = black;
-
+quitBackground = white;
+quitBackgroundActivated = red;
 //
 } //End setup
 //
 void draw() {
   //println ("My Mouse is", mouseX, mouseY);
   //Button HoverOver
-  if ( mouseX>playSongX && mouseX<playSongX+playSongWidth && mouseY>playSongY && mouseY<playSongY+playSongHeight ) {
+ if ( mouseX>playSongX && mouseX<playSongX+playSongWidth && mouseY>playSongY && mouseY<playSongY+playSongHeight ) {
     //println("Wahoo! I'm playing you");
     playButton = true;
+     fill(playColourBackgroundActivated);
+     rect(playSongX, playSongY, playSongWidth, playSongHeight);
+      fill(playColourSymbolActivated);
+      triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
+      fill(resetBackground);
   } else {
     //print(" ");
     playButton = false;
-  }
+    fill(playColourBackground);
+    rect(playSongX, playSongY, playSongWidth, playSongHeight);
+    fill(playColourSymbolActivated);
+      triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
+      fill(resetBackground);
+  } //End Play Button Hover Over
+  if ( mouseX > closeX && mouseX < closeX + closeWidth && mouseY > closeY && mouseY < closeY + closeHeight ) {
+   fill(quitBackgroundActivated);
+   rect(closeX, closeY, closeWidth, closeHeight);
+    fill(resetBackground);
+  } else {
+    fill(quitBackground);
+     rect(closeX, closeY, closeWidth, closeHeight);
+    fill(resetBackground);
+      }//End Quit Button Hover Over
+      //
 } //End draw
 //
 void mousePressed() {
