@@ -16,7 +16,7 @@
  
  
  - Quit Button: Time Stamp specficially noLoop() and exit()
-
+ 
  - Next Program to Update: Music Dynamic v2
  
  */
@@ -39,94 +39,99 @@ color quitBackground, quitBackgroundActivated;
 //
 void setup() {
   //Display
-  size(500,100);
+  size(900, 500);
   //fullScreen();
   appWidth = width;
   appHeight = height;
-//Population
-float closeX = appWidth * 24.7/28.0;
-float closeY = appHeight * 1/17.0;
-float closeWidth = appWidth * 2/28.0;
-float closeHeight = appHeight * 2/17.0;
-// line 1
-float closelineLine1X1 = closeX + closeWidth * 1/4; 
-float closelineLine1Y1 = closeY + closeHeight * 1/4;
-float closelineLine1X2 = closeX + closeWidth * 3/4; 
-float closelineLine1Y2 = closeY + closeHeight * 3/4;
-// line 2
-float closelineLine2X1 = closeX + closeWidth * 3/4; 
-float closelineLine2Y1 = closeY + closeHeight * 1/4;
-float closelineLine2X2 = closeX + closeWidth * 1/4; 
-float closelineLine2Y2 = closeY + closeHeight * 3/4;
-//
-float playSongX = appWidth * 11.3/28.0;
-float playSongY = appHeight * 13/17.0;
-float playSongWidth = appWidth * 3/28.0;
-float playSongHeight = appHeight * 3/17.0;
-// Triangle ponits
-float playSongX1 = playSongX + playSongWidth * 1/4;
-float playSongY1 = playSongY + playSongHeight * 1/4;
-float playSongX2 = playSongX + playSongWidth * 3/4;
-float playSongY2 = playSongY + playSongHeight * 1/2;
-float playSongX3 = playSongX + playSongWidth * 1/4;
-float playSongY3 = playSongY + playSongHeight * 3/4;
-//DIVS
-println(closeX, closeY, closeWidth, closeHeight);
-rect(closeX, closeY, closeWidth, closeHeight);
-line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
-line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
-rect(playSongX, playSongY, playSongWidth, playSongHeight);
-triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
-//
-// Colour Population
-color black = 0; //Gray Scale, much smaller color, 256
-color white = 255; //Gray Scale
-//CANVAS: default background and ink
-resetBackground = white;
-resetInk = black;
-//Button Colours
-color red = #FF0000;
-color purple = #F0B1FA;
-color grayscale = 256/2;
-playColourBackground = black;
-playColourSymbol = purple;
-playColourBackgroundActivated = purple;
-playColourSymbolActivated = black;
-quitBackground = white;
-quitBackgroundActivated = red;
-//
+  //Population
+  closeX = appWidth * 24.7/28.0;
+  closeY = appHeight * 1/17.0;
+  closeWidth = appWidth * 2/28.0;
+  closeHeight = appHeight * 2/17.0;
+  // line 1
+   closelineLine1X1 = closeX + closeWidth * 1/4;
+   closelineLine1Y1 = closeY + closeHeight * 1/4;
+   closelineLine1X2 = closeX + closeWidth * 3/4;
+   closelineLine1Y2 = closeY + closeHeight * 3/4;
+  // line 2
+   closelineLine2X1 = closeX + closeWidth * 3/4;
+   closelineLine2Y1 = closeY + closeHeight * 1/4;
+   closelineLine2X2 = closeX + closeWidth * 1/4;
+   closelineLine2Y2 = closeY + closeHeight * 3/4;
+  //
+   playSongX = appWidth * 11.3/28.0;
+   playSongY = appHeight * 13/17.0;
+   playSongWidth = appWidth * 3/28.0;
+   playSongHeight = appHeight * 3/17.0;
+  // Triangle ponits
+   playSongX1 = playSongX + playSongWidth * 1/4;
+   playSongY1 = playSongY + playSongHeight * 1/4;
+   playSongX2 = playSongX + playSongWidth * 3/4;
+   playSongY2 = playSongY + playSongHeight * 1/2;
+   playSongX3 = playSongX + playSongWidth * 1/4;
+   playSongY3 = playSongY + playSongHeight * 3/4;
+  //DIVS
+  println(closeX, closeY, closeWidth, closeHeight);
+  rect(closeX, closeY, closeWidth, closeHeight);
+  line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
+  line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
+  //rect(playSongX, playSongY, playSongWidth, playSongHeight);
+  //triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
+  //
+  // Colour Population
+  color black = 0; //Gray Scale, much smaller color, 256
+  color white = 255; //Gray Scale
+  //CANVAS: default background and ink
+  resetBackground = white;
+  resetInk = black;
+  //Button Colours
+  color red = #FF0026;
+  color pink = #FAB3F3;
+  color blue = #CCD1FA;
+  playColourBackground = blue;
+  playColourSymbol = blue;
+  playColourBackgroundActivated = pink;
+  playColourSymbolActivated = blue;
+  quitBackground = white;
+  quitBackgroundActivated = red;
+  //
 } //End setup
 //
 void draw() {
-  //println ("My Mouse is", mouseX, mouseY);
+  println ("My Mouse is", mouseX, mouseY, closeX, closeY);
   //Button HoverOver
- if ( mouseX>playSongX && mouseX<playSongX+playSongWidth && mouseY>playSongY && mouseY<playSongY+playSongHeight ) {
+  /*
+  if ( mouseX>playSongX && mouseX<playSongX+playSongWidth && mouseY>playSongY && mouseY<playSongY+playSongHeight ) {
     //println("Wahoo! I'm playing you");
     playButton = true;
-     fill(playColourBackgroundActivated);
-     rect(playSongX, playSongY, playSongWidth, playSongHeight);
-      fill(playColourSymbolActivated);
-      triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
-      fill(resetBackground);
+    fill(playColourBackgroundActivated);
+    rect(playSongX, playSongY, playSongWidth, playSongHeight);
+    fill(playColourSymbolActivated);
+    triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
+    fill(resetBackground);
   } else {
     //print(" ");
     playButton = false;
     fill(playColourBackground);
     rect(playSongX, playSongY, playSongWidth, playSongHeight);
     fill(playColourSymbolActivated);
-      triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
-      fill(resetBackground);
+    triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
+    fill(resetBackground);
   } //End Play Button Hover Over
+  */
   if ( mouseX > closeX && mouseX < closeX + closeWidth && mouseY > closeY && mouseY < closeY + closeHeight ) {
-   fill(quitBackgroundActivated);
-   rect(closeX, closeY, closeWidth, closeHeight);
+    fill(quitBackgroundActivated);
+    rect(closeX, closeY, closeWidth, closeHeight);
+    
     fill(resetBackground);
   } else {
     fill(quitBackground);
-     rect(closeX, closeY, closeWidth, closeHeight);
+    rect(closeX, closeY, closeWidth, closeHeight);
+    line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
+  line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
     fill(resetBackground);
-      }//End Quit Button Hover Over
-      //
+  }//End Quit Button Hover Over
+  //
 } //End draw
 //
 void mousePressed() {
