@@ -75,8 +75,8 @@ void setup() {
   rect(closeX, closeY, closeWidth, closeHeight);
   line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
   line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
-  //rect(playSongX, playSongY, playSongWidth, playSongHeight);
-  //triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
+  rect(playSongX, playSongY, playSongWidth, playSongHeight);
+  triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
   //
   // Colour Population
   color black = 0; //Gray Scale, much smaller color, 256
@@ -100,7 +100,6 @@ void setup() {
 void draw() {
   println ("My Mouse is", mouseX, mouseY, closeX, closeY);
   //Button HoverOver
-  /*
   if ( mouseX>playSongX && mouseX<playSongX+playSongWidth && mouseY>playSongY && mouseY<playSongY+playSongHeight ) {
     //println("Wahoo! I'm playing you");
     playButton = true;
@@ -118,7 +117,7 @@ void draw() {
     triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
     fill(resetBackground);
   } //End Play Button Hover Over
-  */
+ 
   if ( mouseX > closeX && mouseX < closeX + closeWidth && mouseY > closeY && mouseY < closeY + closeHeight ) {
     fill(quitBackgroundActivated);
     rect(closeX, closeY, closeWidth, closeHeight);
