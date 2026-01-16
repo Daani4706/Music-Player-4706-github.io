@@ -132,7 +132,7 @@ void draw() {
     fill(resetBackground);
     fill(quitButtonInk);
     //Note: rect() starts top-right corner, text() starts bottom-right corner
-    text("X", closeX+closeWidth*1/2, closeY+closeHeight*3/5); //adjust fractions or decimals until working
+    text("X", closeX+closeWidth*2, closeY+closeHeight*2); //adjust fractions or decimals until working
     fill(resetInk);
      } else {
     fill(quitBackgroundActivated);
@@ -142,7 +142,7 @@ void draw() {
     fill(resetBackground);
     fill(quitButtonInk);
     //Note: rect() starts top-right corner, text() starts bottom-right corner
-    text("X", closeX+closeWidth*1/2, closeY+closeHeight*3/5); //adjust fractions or decimals until working
+    text("X", closeX+closeWidth*2, closeY+closeHeight*2); //adjust fractions or decimals until working
     fill(resetInk);
   }//End Quit Button Hover Over
   //
