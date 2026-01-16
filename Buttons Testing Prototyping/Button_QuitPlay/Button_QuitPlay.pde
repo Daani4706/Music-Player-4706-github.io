@@ -1,28 +1,12 @@
-/* Creating Buttons
- - Understanding how the mixing of boilerplate happens
- - Introducing Booleans to communicate between procedures, 1 bite of information
- 
- - Specific Debugging Topics
- - draw() varaibles initiated in Global Varaibles due to LOOP
- - MouseX & Y keyVariables
- - Using println() to test functionality
- 
- - What to copy and paste
- - Quit & Play DIV
-
- CONTINUE HERE
- 
- 
- 
- - Quit Button: Time Stamp specficially noLoop() and exit()
- 
- - Next Program to Update: Music Dynamic v2
- 
+/* Creating Buttons - Grouping Code
+ - Colours & Night Mode
  */
 //
 //Library - Minim
 //
 //Global Variables
+//Note: Move the Global Variables to their subprograms
+//All Global Variables execute first ... A global Variable is a Global Variable
 int appWidth, appHeight;
 float closeX, closeY, closeWidth, closeHeight;
 float closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2;
@@ -30,11 +14,13 @@ float closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2;
 float playSongX, playSongY, playSongWidth, playSongHeight;
 float playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3;
 //
-Boolean playButton=false;
+Boolean playButton=false, quitButton=false;;
 //
-color resetBackground, resetInk;
+color resetBackground, resetInk, resetBackgroundDay, resetInkDay, resetBackgroundNight, resetInkNight;
+color quitButtonInk;
 color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
 color quitBackground, quitBackgroundActivated;
+boolean nightMode = false;
 //
 void setup() {
   //Display
@@ -77,71 +63,73 @@ void setup() {
   rect(playSongX, playSongY, playSongWidth, playSongHeight);
   triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
   //
-  // Colour Population
-  color black = 0; //Gray Scale, much smaller color, 256
-  color white = 255; //Gray Scale
-  //CANVAS: default background and ink
-  resetBackground = white;
-  resetInk = black;
-  //Button Colours
-  color red = #FF0026;
-  color pink = #FAB3F3;
-  color blue = #CCD1FA;
-  playColourBackground = blue;
-  playColourSymbol = blue;
-  playColourBackgroundActivated = pink;
-  playColourSymbolActivated = blue;
-  quitBackground = white;
-  quitBackgroundActivated = red;
+  //Colour Population
+  nightMode=false;
+  buildingColours(); //See Colour Population
   //
 } //End setup
 //
 void draw() {
-  println ("My Mouse is", mouseX, mouseY, closeX, closeY);
+  //println ("My Mouse is", mouseX, mouseY);
+   //println (playButton);
   //Button HoverOver
-  if ( mouseX>playSongX && mouseX<playSongX+playSongWidth && mouseY>playSongY && mouseY<playSongY+playSongHeight ) {
-    //println("Wahoo! I'm playing you");
-    playButton = true;
-    fill(playColourBackgroundActivated);
-    rect(playSongX, playSongY, playSongWidth, playSongHeight);
-    fill(playColourSymbolActivated);
-    triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
-    fill(resetBackground);
-  } else {
-    //print(" ");
-    playButton = false;
-    fill(playColourBackground);
-    rect(playSongX, playSongY, playSongWidth, playSongHeight);
-    fill(playColourSymbolActivated);
-    triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
-    fill(resetBackground);
-  } //End Play Button Hover Over
- 
   if ( mouseX > closeX && mouseX < closeX + closeWidth && mouseY > closeY && mouseY < closeY + closeHeight ) {
-    fill(quitBackgroundActivated);
-    rect(closeX, closeY, closeWidth, closeHeight);
-    
-    fill(resetBackground);
+     quitButtonActive();
   } else {
-    fill(quitBackground);
-    rect(closeX, closeY, closeWidth, closeHeight);
-    line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
-  line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
-    fill(resetBackground);
+    quitButtonRegular();
   }//End Quit Button Hover Over
+  if ( mouseX>playSongX && mouseX<playSongX+playSongWidth && mouseY>playSongY && mouseY<playSongY+playSongHeight ) {
+  if ( playButton == false ) playButtonActive();
+  } else {
+    playButtonReady();
+    if ( playButton == true ) playButtonActive();
+  }//End Play Button Hover Over
   //
 } //End draw
 //
 void mousePressed() {
-  //Music Play Functions
-  if ( playButton == true ) {
-    println("Play My Song");
-  } else {
-    println(" ");
+  //Quit Button: does not use Boolean, only mouseX&Y already present in system key variables
+  if ( mouseX > closeX && mouseX < closeX + closeWidth && mouseY > closeY && mouseY < closeY + closeHeight ) {
+   quitButton(); //See Below
   }
+  //Music Play Functions
+  /* Boolean Test of Concept
+   if ( playButton == true ) {
+   println("Play My Song");
+   playButton=false; //reset Boolean for draw()
+   } else {
+   println(" ");
+   }
+   */  
+  if ( mouseX>playSongX && mouseX<playSongX+playSongWidth && mouseY>playSongY && mouseY<playSongY+playSongHeight ) {
+  //Note, change to "Is the Song Playing Boolean"
+    if ( playButton == false ) {
+      playButton = true;
+      println("Wahoo! I'm playing you");
+    } else {
+      playButton = false;
+      println(" ");
+    }
+    //if ( playButton == true ) playButtonActive();
+    //if ( playButton == false ) playButtonReady();
+  } // End Play Button
 } //End Mouse Pressed
 //
 void keyPressed() {
+  //Note, CAPs Lock on Code: key=='[CAP]' || key=='[lowerCase]'
+  //CAUTION: Order Matters
+  if (key=='Q' || key=='q') {
+    quitButton();  //See Below
+  } //Quit Button
+  if (key=='D' || key=='d') {
+    colourPopulation();
+  } //Night Mode
 } //End Key Pressed
+//
+void quitButton() {
+noLoop(); //Adjusts the exit of the program using finishing draw()
+    exit(); //With noLoop(), exit happens here
+    println("Final Line of mousePressed and finishes draw()");
+}// End Quit Button
 //
 //End MAIN Program
