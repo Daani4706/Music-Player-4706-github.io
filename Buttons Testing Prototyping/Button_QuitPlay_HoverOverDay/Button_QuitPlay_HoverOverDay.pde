@@ -111,7 +111,7 @@ void draw() {
     line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
     fill(resetBackground);
      } else {
-    fill(quitBackgroundActivated);
+    fill(quitBackground);
     rect(closeX, closeY, closeWidth, closeHeight);
     line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
     line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
