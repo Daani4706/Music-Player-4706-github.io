@@ -45,8 +45,8 @@ void buildingColours() {
   resetInk = black;
   playColourBackground = purple;
   playColourSymbol = darkpurple;
-  playColourBackgroundActivated = purple;
-  playColourSymbolActivated = darkpurple;
+  playColourBackgroundActivated = darkpurple;
+  playColourSymbolActivated = purple;
   quitBackground = white;
   quitBackgroundActivated = red;
   } //End Night Mode Colors
