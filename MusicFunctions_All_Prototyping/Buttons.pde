@@ -30,6 +30,13 @@ float[] stringMainX = new float[numberOfDIVs];
 float[] stringMainY = new float[numberOfDIVs];
 float[] stringMainWidth = new float[numberOfDIVs];
 float[] stringMainHeight = new float[numberOfDIVs];
+//
+//Strings, Text, Literal
+String[] text = new String[numberOfDIVs]; //CAUTION: Data intentionally makes STRINGS=numberOfDIVs, one-to-one counting
+text[0] = "Lyrics";
+text[1] = "Information of the song";
+text[2] = "Artist Name";
+text[3] = "Song Name";
 } //End Title DIV
 void playButtonSymbol() {
   triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);

@@ -44,7 +44,6 @@ void draw() {
   //println ("My Mouse is", mouseX, mouseY);
   //println (playButton);
   hoverOver_draw(); //See Buttons
-  //
   saveSongTitle(); //See Music Meta Data
   drawText();
   //
@@ -127,7 +126,7 @@ void keyPressed() {
   }
   //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
   //
-  if ( key=='S' | key=='s' ) {
+  if ( key=='S' || key=='s' ) {
     if ( playList[currentSong].isPlaying() ) {
       playList[currentSong].pause(); //single tap
     } else {

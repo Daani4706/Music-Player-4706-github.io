@@ -1,13 +1,21 @@
 //Last Step to Organize
 //Global Variables
 int appWidth, appHeight;
-rect(closeX, closeY, closeWidth, closeHeight);
-line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
-line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
-rect(playSongX, playSongY, playSongWidth, playSongHeight);
-triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
+int appWidth, appHeight;
+float closeX, closeY, closeWidth, closeHeight;
+float closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2;
+float closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2;
+float playSongX, playSongY, playSongWidth, playSongHeight;
+float playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3;
 //
 Boolean playButton=false, quitButton=false;
+// DIVs
+int numberOfDIVs = 4;
+float[] stringMainX = new float[numberOfDIVs];
+float[] stringMainY = new float[numberOfDIVs];
+float[] stringMainWidth = new float[numberOfDIVs];
+float[] stringMainHeight = new float[numberOfDIVs];
+String[] text = new String[numberOfDIVs];
 //
 color resetBackground, resetInk, resetBackgroundDay, resetInkDay, resetBackgroundNight, resetInkNight;
 color quitButtonInk;
