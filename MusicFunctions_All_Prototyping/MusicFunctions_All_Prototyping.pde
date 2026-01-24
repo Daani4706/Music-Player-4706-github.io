@@ -1,7 +1,5 @@
-/* Copied from  Music Static
- - Hearing Music and Sound Effects
- - Reading Code with CTRL-T & Braces
- - Global Variable V Local Variable, Garbage Collection
+/* Creating Buttons - HoverOver in draw()
+- Add Minim from Sketch / Import Library / Minim
  */
 //
 //Library - Minim
@@ -12,75 +10,69 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
-//Global Varaibles
-Minim minim; //initates entire class
-int numberOfSongs = 3; //Best Practice
-int numberOfSoundEffects = 1; //Best Practice
-AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
-AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
-int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
+//Global Variables
 //
+/*
+void settings(){
+println(displayWidth, displayHeight);
+  int shorterSide = ( displayWidth > displayHeight ) ? displayHeight : displayWidth ; //Ternary Operator
+  shorterSide *= 0.9; //90%, WINDOW Frame
+  size(shorterSide, shorterSide); //ERROR IllegalStateException: cannot use a var in size()
+  println("Display Questions", displayWidth, displayHeight, shorterSide);
+  println("CANVAS Size Key Variables for setup()", width, height);
+} //End settings
+  */
 void setup() {
-//Display
-size(500, 400); //width //height
-//fullScreen(); //displayHeight //displayWidth
-int appWidth = width; 
-int appHeight = height; 
-//
-//Music Loading - STRUCTURED Review
-minim = new Minim(this); //Manditory
- String upArrow = "../../../";
- String musicFolder = "Music/"; //Developer Specific 
- String soundEffectsFolder = "Sound Effect/"; //Developer Specific
+  //Display CANVAS
+  //size(); //width //height
+  fullScreen(); //displayWidth //displayHeight
+  appWidth = displayWidth;
+  appHeight = displayHeight;
   //
-String[] songName = new String[numberOfSongs];
-songName[0] = "Cheri Cheri Lady";
-songName[1] = "Cheap Thrills";
-songName[2] = "Happy Nation";
-//
-String soundEffect1 = "Spring_Attic_Door";
-String fileExtension_mp3 = ".mp3";
-//
-String musicDirectory = upArrow + musicFolder; //Concatenation
-String soundEffectsDirectory = upArrow + musicFolder + soundEffectsFolder; //Concatenation
-String file; //TO BE Rewritten and deleted once file is LOADED
-//
-for ( int i=0; i<numberOfSongs; i++ ) {
-  file = musicDirectory + songName[i] + fileExtension_mp3;
-  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-   currentSong++;
-  } //End File Loading
-currentSong=0;
-file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
-soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
- //
-for ( int i=0; i<numberOfSongs; i++ ) {
-    //ERROR Check Music and Sound Effect Variables
-    //Thrown by commenting out FILE, playList[] or soundEffects[]
-    if ( playList[i]==null || soundEffects[currentSong]==null) { //ERROR, play list is NULL
-      //See FILE or minim.loadFile
-      println("The Play List or Sound Effects did not load properly");
-      printArray(playList);
-      printArray(soundEffects);
-      /* println("Music Pathway", musicDirectory);
-       println("Full Music File Pathway", file);
-       */
-    } //End ERROR Check Music and Sound Effect Variables
-  } //End File Loading
+  divPopulation();
+  DIVs(); //See Buttons
+  musicButtonShapes();
+  nightMode=false; //initialization in setup() only
+  colourPopulation();
+  musicSetup();
+  textSetup();
+  testMetaData(); //Note: println only
   //
 } //End setup
 //
 void draw() {
+  //println ("My Mouse is", mouseX, mouseY);
+  //println (playButton);
+  hoverOver_draw(); //See Buttons
+  //
+  saveSongTitle(); //See Music Meta Data
+  drawText();
+  //
 } //End draw
 //
 void mousePressed() {
+  //Quit Button: does not use Boolean, only mouseX&Y already present in system key variables
+  //CAUTION: must use if-elseIf-else or Clickable Screen will get confused
+  if ( mouseX>quitDivX && mouseX<quitDivX+quitDivWidth && mouseY>quitDivY &&mouseY<quitDivY+quitDivHeight ) {
+    quitButton(); //See Below
+  }
 } //End Mouse Pressed
 //
 void keyPressed() {
-  /* Simple Play
-  playList[currentSong].play();
-  currentSong++;
-  */
+  //Note, CAPs Lock on Code: key=='[CAP]' || key=='[lowerCase]'
+  //CAUTION: Order Matters
+  if (key=='Q' || key=='q') {
+    quitButton();  //See Below
+  } //Quit Button
+  if (key=='D' || key=='d') {
+    if ( nightMode == false ) {
+      nightMode = true;
+    } else {
+      nightMode = false;
+    }
+    colourPopulation();
+  } //Night Mode
+  //
   //
   /* Key Board Short Cuts ... learning what the Music Buttons could be
    Note: CAP Lock with ||
@@ -135,7 +127,7 @@ void keyPressed() {
   }
   //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
   //
-  if ( key=='S' || key=='s' ) {
+  if ( key=='S' | key=='s' ) {
     if ( playList[currentSong].isPlaying() ) {
       playList[currentSong].pause(); //single tap
     } else {
@@ -162,7 +154,7 @@ void keyPressed() {
     }
   }
   if ( key==CODED || keyCode==ESC ) exit(); // QUIT //UP
-  if ( key=='Q' || key=='q' ) exit(); // QUIT
+  //if ( key=='Q' || key=='q' ) exit(); //Depreciated, already coded, See Buttons // QUIT
   //
   if ( key=='N' || key=='n' ) { // NEXT //See .txt for starter hint
     if ( playList[currentSong].isPlaying() ) {
@@ -204,33 +196,3 @@ void keyPressed() {
 } //End Key Pressed
 //
 //End MAIN Program
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
