@@ -52,8 +52,8 @@ void draw() {
 void mousePressed() {
   //Quit Button: does not use Boolean, only mouseX&Y already present in system key variables
   //CAUTION: must use if-elseIf-else or Clickable Screen will get confused
-  if ( mouseX>quitDivX && mouseX<quitDivX+quitDivWidth && mouseY>quitDivY &&mouseY<quitDivY+quitDivHeight ) {
-    quitButton(); //See Below
+  if ( mouseX > closeX && mouseX < closeX + closeWidth && mouseY > closeY && mouseY < closeY + closeHeight ) {
+   quitButton(); //See Below
   }
 } //End Mouse Pressed
 //

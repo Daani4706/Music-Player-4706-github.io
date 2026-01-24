@@ -30,15 +30,17 @@ float[] stringMainX = new float[numberOfDIVs];
 float[] stringMainY = new float[numberOfDIVs];
 float[] stringMainWidth = new float[numberOfDIVs];
 float[] stringMainHeight = new float[numberOfDIVs];
-//
-//Strings, Text, Literal
-String[] text = new String[numberOfDIVs]; //CAUTION: Data intentionally makes STRINGS=numberOfDIVs, one-to-one counting
-text[0] = "Lyrics";
-text[1] = "Information of the song";
-text[2] = "Artist Name";
-text[3] = "Song Name";
-} //End Title DIV
-void playButtonSymbol() {
+} //End of titleDivs
+void titleText(){
+  // Only assign values to globally declared arrays
+ if (text != null && text.length >= 4) {
+  text[0] = "Lyrics";
+  text[1] = "Information of the song";
+  text[2] = "Artist Name";
+  text[3] = "Song Name";
+ }
+} // End titleText
+void playButtonSymbol(){
   triangle(playSongX1, playSongY1, playSongX2, playSongY2, playSongX3, playSongY3);
 }//End Play Button Symbol
 void musicButtonShapes() {
@@ -85,12 +87,12 @@ void playButtonReady() {
    } // End Play Button Ready
 void hoverOver_draw() {
   //Button HoverOver
-  if ( mouseX>quitDivX && mouseX<quitDivX+quitDivWidth && mouseY>quitDivY &&mouseY<quitDivY+quitDivHeight ) {
+  if ( mouseX > closeX && mouseX < closeX + closeWidth && mouseY > closeY && mouseY < closeY + closeHeight  ) {
     quitButtonActive();
   } else {
     quitButtonRegular();
   }//End Quit Button Hover Over
-  if ( mouseX>playDivX && mouseX<playDivX+playDivWidth && mouseY>playDivY && mouseY<playDivY+playDivHeight ) {
+  if ( mouseX>playSongX && mouseX<playSongX+playSongWidth && mouseY>playSongY && mouseY<playSongY+playSongHeight ) {
     if ( playButton == false ) playButtonActive();
   } else {
     //Order of below creates optical illusion - switching colours
