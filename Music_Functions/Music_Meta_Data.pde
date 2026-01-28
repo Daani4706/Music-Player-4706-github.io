@@ -49,12 +49,15 @@ void testMetaData() {
 void saveSongTitle() {
   //See draw()
   //Note: See Music Loading if NULL
-  if ( playList[currentSong].isPlaying() == true) {
-    titleDIV();
-    songTitle = playListMetaData[currentSong].title(); //Used to switch titles in draw()
-    //println("Check VAR currentSongFileName", currentSongFileName);
+  // Guard against null playList entries when files failed to load
+  titleDIV();
+  if ( playList != null && playList.length > 0 && playList[currentSong] != null && playList[currentSong].isPlaying() ) {
+    if ( playListMetaData[currentSong] != null ) {
+      songTitle = playListMetaData[currentSong].title(); //Used to switch titles in draw()
+    } else {
+      songTitle = "(no metadata)";
+    }
   } else {
-    titleDIV();
     songTitle = "Nothing Playing Yet!";
   }
 } //End Print Song Title in draw()

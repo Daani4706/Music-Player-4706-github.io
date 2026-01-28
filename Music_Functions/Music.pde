@@ -7,9 +7,10 @@
 void musicSetup() {
   // initialize minim
   minim = new Minim(this); // Mandatory
- String upArrow = "../../../";
- String musicFolder = "Music/"; //Developer Specific 
- String soundEffectsFolder = "Sound Effect/"; //Developer Specific
+ // Place your MP3 files inside the sketch "data" folder for Processing.
+ // For example: <sketch folder>/data/Music/Cheri Cheri Lady.mp3
+ String musicFolder = "Music/"; // Developer-specific subfolder inside data
+ String soundEffectsFolder = "Sound Effect/"; // Developer-specific subfolder inside data
   //
 String[] songName = new String[numberOfSongs];
 songName[0] = "Cheri Cheri Lady";
@@ -19,8 +20,10 @@ songName[2] = "Happy Nation";
 String soundEffect1 = "Spring_Attic_Door";
 String fileExtension_mp3 = ".mp3";
 //
-String musicDirectory = upArrow + musicFolder; //Concatenation
-String soundEffectsDirectory = upArrow + musicFolder + soundEffectsFolder; //Concatenation
+// When files are placed in the sketch "data" folder, minim.loadFile can load
+// them using a relative path from the data folder. Build paths accordingly.
+String musicDirectory = musicFolder; // e.g. "Music/"
+String soundEffectsDirectory = musicFolder + soundEffectsFolder; // e.g. "Music/Sound Effect/"
 String file; //TO BE Rewritten and deleted once file is LOADED
 //
   for ( int i=0; i<numberOfSongs; i++ ) {
@@ -50,6 +53,11 @@ for ( int i=0; i<numberOfSongs; i++ ) {
 //
 //
 void musicFunctionsKeyPressed() {
+  // guard: ensure the current audio slot is loaded
+  if ( playList == null || playList.length == 0 || playList[currentSong] == null ) {
+    println("No audio loaded for currentSong (key press ignored)");
+    return;
+  }
   /*
    All Music Player Features are built out of these Minim AudioPlayer() functions
    .isPlaying()
