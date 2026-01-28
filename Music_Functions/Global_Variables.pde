@@ -29,5 +29,9 @@ AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
 String songTitle;
 float fontSize=0; //Able to set the First Font Size to AppHeight
 PFont titleFont;
+// DIV / text globals (shared across modules)
+int numberOfDIVs;
+float[] stringMainX, stringMainY, stringMainWidth, stringMainHeight;
+String[] text;
 //
 //End Global Variables

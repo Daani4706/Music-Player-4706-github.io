@@ -26,17 +26,18 @@ void playDIV() {
 } // End Plauy Button DIV
 //
 void titleDIV() {
-  int numberOfDIVs = 4;
-float[] stringMainX = new float[numberOfDIVs];
-float[] stringMainY = new float[numberOfDIVs];
-float[] stringMainWidth = new float[numberOfDIVs];
-float[] stringMainHeight = new float[numberOfDIVs];
-//
-String[] text = new String[numberOfDIVs]; //CAUTION: Data intentionally makes STRINGS=numberOfDIVs, one-to-one counting
-text[0] = "Lyrics";
-text[1] = "Information of the song";
-text[2] = "Artist Name";
-text[3] = "Song Name";
+  // initialize shared DIV/text globals
+  numberOfDIVs = 4;
+  stringMainX = new float[numberOfDIVs];
+  stringMainY = new float[numberOfDIVs];
+  stringMainWidth = new float[numberOfDIVs];
+  stringMainHeight = new float[numberOfDIVs];
+  //
+  text = new String[numberOfDIVs]; //CAUTION: Data intentionally makes STRINGS=numberOfDIVs, one-to-one counting
+  text[0] = "Lyrics";
+  text[1] = "Information of the song";
+  text[2] = "Artist Name";
+  text[3] = "Song Name";
 } //End Title DIV
 //
 void playButtonSymbol() {
