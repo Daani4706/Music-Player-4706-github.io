@@ -30,8 +30,11 @@ String songTitle;
 float fontSize=0; //Able to set the First Font Size to AppHeight
 PFont titleFont;
 // DIV / text globals (shared across modules)
-int numberOfDIVs;
-float[] stringMainX, stringMainY, stringMainWidth, stringMainHeight;
-String[] text;
+int numberOfDIVs = 4; // default number of DIVs
+float[] stringMainX = new float[numberOfDIVs];
+float[] stringMainY = new float[numberOfDIVs];
+float[] stringMainWidth = new float[numberOfDIVs];
+float[] stringMainHeight = new float[numberOfDIVs];
+String[] text = new String[numberOfDIVs];
 //
 //End Global Variables

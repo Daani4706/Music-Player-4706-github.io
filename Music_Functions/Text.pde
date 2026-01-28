@@ -26,8 +26,8 @@ void textSetup() {
    //Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
    //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
    */
-  float fontSize = appHeight; // Entire program
-PFont titleFont; // font Var name
+  // use global fontSize and titleFont declared in globals
+  fontSize = appHeight; // Entire program
 String CorbelBoldItalic= "Corbel Bold Italic";
 titleFont = createFont (CorbelBoldItalic, fontSize);
 //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
@@ -89,6 +89,23 @@ for ( int i=0; i<numberOfDIVs; i++ ) {
   text( text[i], stringMainX[i], stringMainY[i], stringMainWidth[i], stringMainHeight[i] );
 }
 fill(resetInk);
+}
+// draw-time helpers
+void textdraw() {
+  // draw text into DIVs (safe fallback if textSetup was not called)
+  textAlign(CENTER, CENTER);
+  for ( int i=0; i<numberOfDIVs; i++ ) {
+    text( text[i], stringMainX[i], stringMainY[i], stringMainWidth[i], stringMainHeight[i] );
+  }
+}
+
+void songTitle() {
+  // draw the currently saved song title (fallback)
+  textAlign(CENTER, CENTER);
+  if ( songTitle != null ) {
+    text( songTitle, stringMainX[2], stringMainY[2], stringMainWidth[2], stringMainHeight[2] );
+  }
+}
 //
 //End Program
 //

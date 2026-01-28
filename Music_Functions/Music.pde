@@ -3,23 +3,10 @@
  - Key Pressed Music Buttons
  */
 //
-//Global Varaibles
-Minim minim; //initates entire class
-int numberOfSongs = 3; //Best Practice
-int numberOfSoundEffects = 1; //Best Practice
-AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
-AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
-int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
-//
-void setup() {
-//Display
-size(500, 400); //width //height
-//fullScreen(); //displayHeight //displayWidth
-int appWidth = width; 
-int appHeight = height; 
-//
-//Music Loading - STRUCTURED Review
-minim = new Minim(this); //Manditory
+// Music setup (use globals declared in Global_Variables.pde)
+void musicSetup() {
+  // initialize minim
+  minim = new Minim(this); // Mandatory
  String upArrow = "../../../";
  String musicFolder = "Music/"; //Developer Specific 
  String soundEffectsFolder = "Sound Effect/"; //Developer Specific
@@ -36,7 +23,7 @@ String musicDirectory = upArrow + musicFolder; //Concatenation
 String soundEffectsDirectory = upArrow + musicFolder + soundEffectsFolder; //Concatenation
 String file; //TO BE Rewritten and deleted once file is LOADED
 //
-for ( int i=0; i<numberOfSongs; i++ ) {
+  for ( int i=0; i<numberOfSongs; i++ ) {
   file = musicDirectory + songName[i] + fileExtension_mp3;
   playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
    currentSong++;

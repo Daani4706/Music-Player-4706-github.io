@@ -26,14 +26,7 @@ void playDIV() {
 } // End Plauy Button DIV
 //
 void titleDIV() {
-  // initialize shared DIV/text globals
-  numberOfDIVs = 4;
-  stringMainX = new float[numberOfDIVs];
-  stringMainY = new float[numberOfDIVs];
-  stringMainWidth = new float[numberOfDIVs];
-  stringMainHeight = new float[numberOfDIVs];
-  //
-  text = new String[numberOfDIVs]; //CAUTION: Data intentionally makes STRINGS=numberOfDIVs, one-to-one counting
+  // populate title text (arrays are allocated in globals)
   text[0] = "Lyrics";
   text[1] = "Information of the song";
   text[2] = "Artist Name";
