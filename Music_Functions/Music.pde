@@ -27,13 +27,33 @@ String soundEffectsDirectory = musicFolder + soundEffectsFolder; // e.g. "Music/
 String file; //TO BE Rewritten and deleted once file is LOADED
 //
   for ( int i=0; i<numberOfSongs; i++ ) {
-  file = musicDirectory + songName[i] + fileExtension_mp3;
-  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-   currentSong++;
+    // Build absolute path inside the sketch data folder
+    file = sketchPath("data") + System.getProperty("file.separator") + musicDirectory + songName[i] + fileExtension_mp3;
+    java.io.File f = new java.io.File(file);
+    if ( f.exists() ) {
+      playList[ currentSong ] = minim.loadFile( file ); // load using absolute path
+      println("Loaded:", file);
+      // populate metadata if available
+      if ( playList[currentSong] != null ) {
+        playListMetaData[currentSong] = playList[currentSong].getMetaData();
+      }
+    } else {
+      playList[ currentSong ] = null;
+      println("Missing audio file:", file);
+    }
+    currentSong++;
   } //End File Loading
-currentSong=0;
-file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
-soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  currentSong=0;
+  // Load sound effect (same data folder approach)
+  file = sketchPath("data") + System.getProperty("file.separator") + soundEffectsDirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
+  java.io.File fse = new java.io.File(file);
+  if ( fse.exists() ) {
+    soundEffects[currentSong] = minim.loadFile( file );
+    println("Loaded sound effect:", file);
+  } else {
+    soundEffects[currentSong] = null;
+    println("Missing sound effect file:", file);
+  }
  //
 for ( int i=0; i<numberOfSongs; i++ ) {
     //ERROR Check Music and Sound Effect Variables
